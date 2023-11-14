@@ -1,27 +1,5 @@
+![platon image](https://cdn.pixabay.com/photo/2018/01/08/15/49/plato-3069619_1280.png "demiurge image")
+
 # Demiurge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The word demiurge is an English word derived from demiurgus, a Latinised form of the Greek δημιουργός or dēmiurgós. It was originally a common noun meaning "craftsman" or "artisan", but gradually came to mean "producer", and eventually "creator". The philosophical usage and the proper noun derive from Plato's Timaeus, written c. 360 BC, where the demiurge is presented as the creator of the universe. The demiurge is also described as a creator in the Platonic (c. 310–90 BC) and Middle Platonic (c. 90 BC–AD 300) philosophical traditions. In the various branches of the Neoplatonic school (third century onwards), the demiurge is the fashioner of the real, perceptible world after the model of the Ideas, but (in most Neoplatonic systems) is still not itself "the One". In the arch-dualist ideology of the various Gnostic systems, the material universe is evil, while the non-material world is good. According to some strains of Gnosticism, the demiurge is malevolent, as it is linked to the material world. In others, including the teaching of Valentinus, the demiurge is simply ignorant or misguided.
