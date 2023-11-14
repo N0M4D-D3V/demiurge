@@ -1,4 +1,4 @@
-![platon image]([https://cdn.pixabay.com/photo/2018/01/08/15/49/plato-3069619_1280.png](https://cdn.pixabay.com/photo/2020/03/23/11/42/parthenon-4960616_1280.png) "demiurge image")
+![platon image](https://cdn.pixabay.com/photo/2020/03/23/11/42/parthenon-4960616_1280.png "demiurge image")
 
 # Demiurge
 
