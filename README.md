@@ -1,4 +1,4 @@
-![platon image](https://cdn.pixabay.com/photo/2013/07/13/10/48/columns-157833_1280.png "demiurge image")
+![platon image](https://cdn.pixabay.com/photo/2020/03/23/11/42/parthenon-4960616_1280.png "demiurge image")
 
 # Demiurge
 
