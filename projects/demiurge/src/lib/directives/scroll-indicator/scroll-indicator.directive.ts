@@ -1,13 +1,13 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
-export type ScrollIndicatorType = 'side' | 'float';
+export type DemiScrollIndicatorType = 'side' | 'float';
 
 @Directive({
-  selector: '[efbScrollIndicator]',
-  exportAs: 'efbScrollIndicator',
+  selector: '[demiScrollIndicator]',
+  exportAs: 'demiScrollIndicator',
 })
-export class ScrollIndicatorDirective {
-  @Input() type: ScrollIndicatorType = 'side';
+export class DemiScrollIndicatorDirective {
+  @Input() type: DemiScrollIndicatorType = 'side';
   @Input() iconColor = 'var(--color-accent)';
 
   constructor(private el: ElementRef) {}

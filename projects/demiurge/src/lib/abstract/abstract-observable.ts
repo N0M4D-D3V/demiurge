@@ -1,6 +1,6 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 
-export abstract class AbstractObservable<T> {
+export abstract class DemiObservable<T> {
   protected bs: BehaviorSubject<T[]> = new BehaviorSubject<T[]>([]);
   protected $obs: Observable<T[]> = this.bs.asObservable();
 

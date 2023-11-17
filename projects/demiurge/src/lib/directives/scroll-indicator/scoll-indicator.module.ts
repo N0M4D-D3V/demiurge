@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ScrollIndicatorDirective } from './scroll-indicator.directive';
+import { DemiScrollIndicatorDirective } from './scroll-indicator.directive';
 
 @NgModule({
   imports: [],
-  exports: [ScrollIndicatorDirective],
-  declarations: [ScrollIndicatorDirective],
+  exports: [DemiScrollIndicatorDirective],
+  declarations: [DemiScrollIndicatorDirective],
 })
-export class ScrollIndicatorModule {}
+export class DemiScrollIndicatorModule {}
