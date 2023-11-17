@@ -1,0 +1,99 @@
+.overlay {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-box {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  /* Light mode background color */
+  color: black;
+  /* Light mode text color */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 4px 3px 11px 16px #00000017;
+  max-width: 300px;
+  width: 80%;
+  text-align: center;
+  padding: 20px 0 0 0;
+  position: relative;
+}
+
+button {
+  background-color: transparent;
+  margin-top: 20px;
+  padding: 10px;
+  cursor: pointer;
+  /* Light mode button background color */
+  color: #007aff;
+  /* Light mode button text color */
+  width: 100%;
+
+  border: none;
+  border-top: 1px solid #00000045;
+
+  transition: background-color 0.5s;
+
+  &:not(.last) {
+    border-right: 1px solid #00000045;
+  }
+
+  &.dark-mode {
+    /* Dark mode button background color */
+    color: #007aff;
+    /* Dark mode button text color */
+
+    border-top: 1px solid #8f8f8f73;
+
+    &:not(.last) {
+      border-right: 1px solid #8f8f8f73;
+    }
+
+    &:hover {
+      background-color: #ffffff0f;
+    }
+  }
+
+  &:hover {
+    background-color: #00000014;
+  }
+
+  &.cancel {
+    color: var(--color-cancel);
+  }
+
+  &.continue {
+    font-weight: bold;
+  }
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:active {
+  background-color: #0056b3;
+}
+
+/* Dark mode styles */
+.dark-mode .overlay {
+  background: rgba(255, 255, 255, 0.5);
+  /* Dark mode overlay background color */
+}
+
+.dark-mode .alert-box {
+  background: rgb(24 24 24 / 80%);
+  backdrop-filter: blur(10px);
+  /* Dark mode background color */
+  color: var(--color-white);
+  /* Dark mode text color */
+  box-shadow: 4px 3px 11px 16px #00000017;
+}
