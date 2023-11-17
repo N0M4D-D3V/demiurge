@@ -1,3 +1,9 @@
-export * from './lib/demiurge.service';
-export * from './lib/demiurge.component';
-export * from './lib/demiurge.module';
+// ABSTRACT
+export * from './lib/abstract/abstract-observable';
+
+// DIRECTIVES
+//          Scroll Indicator
+export * from './lib/directives/scroll-indicator/scoll-indicator.module';
+export * from './lib/directives/scroll-indicator/scroll-indicator.directive';
+
+// PIPES
