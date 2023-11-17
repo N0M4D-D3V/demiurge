@@ -15,7 +15,7 @@ import {
 const ANIMATION_DURATION_MS = 300;
 
 @Component({
-  selector: 'efb-modal',
+  selector: 'demi-modal',
   template: `
     <div class="modal-dialog">
       <div class="modal-content" [@position]="animOrigin ? 'origin' : 'moved'">

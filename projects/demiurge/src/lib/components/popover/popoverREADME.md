@@ -14,7 +14,7 @@ this.PopoverService.create({
     height: { vertical: "50%" },
     width: { vertical: "30%", horizontal: "60%" },
   },
-}).then(async (response: EfbPopoverResponse<AirportDto>) => {
+}).then(async (response: DemiPopoverResponse<AirportDto>) => {
   if (response?.role === "create") {
     response.data = (await this.onCreateAirport(event))?.data;
     if (response?.data) {

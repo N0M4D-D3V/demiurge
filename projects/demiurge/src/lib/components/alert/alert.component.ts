@@ -3,7 +3,7 @@ import { DemiAlertService } from '../../services/alert/alert.service';
 import { DemiAlertButton } from './alert.interface';
 
 @Component({
-  selector: 'efb-alert',
+  selector: 'demi-alert',
   template: `
     <div class="overlay" [ngClass]="{ 'dark-mode': darkMode }">
       <div class="alert-box" [ngClass]="{ 'dark-mode': darkMode }">
