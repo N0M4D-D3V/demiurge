@@ -27,3 +27,9 @@ export * from './lib/components/modal/modal.module';
 export * from './lib/components/modal/modal.component';
 export * from './lib/components/modal/modal.interface';
 export * from './lib/components/modal/modal.service';
+
+//          Popover
+export * from './lib/components/popover/popover.module';
+export * from './lib/components/popover/popover.interface';
+export * from './lib/components/popover/components/popover/popover.component';
+export * from './lib/components/popover/services/popover.service';
