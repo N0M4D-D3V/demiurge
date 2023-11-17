@@ -21,3 +21,9 @@ export * from './lib/services/alert/alert.service';
 export * from './lib/components/alert/alert.component';
 export * from './lib/components/alert/alert.interface';
 export * from './lib/components/alert/alert.component.module';
+
+//          Modal
+export * from './lib/components/modal/modal.module';
+export * from './lib/components/modal/modal.component';
+export * from './lib/components/modal/modal.interface';
+export * from './lib/components/modal/modal.service';
