@@ -1,0 +1,26 @@
+<nav class="navbar bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+    <button
+      class="btn text-primary"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#toggleMenu"
+      aria-controls="toggleMenu"
+    >
+      <i class="bi bi-opencollective"></i>
+    </button>
+
+    <span class="text-primary"
+      ><b>{{ config.title | uppercase }}</b></span
+    >
+  </div>
+</nav>
+
+<demi-toggle-menu
+  [config]="config"
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="toggleMenu"
+  aria-labelledby="toggleMenuLabel"
+>
+</demi-toggle-menu>

@@ -33,3 +33,8 @@ export * from './lib/components/popover/popover.module';
 export * from './lib/components/popover/popover.interface';
 export * from './lib/components/popover/components/popover/popover.component';
 export * from './lib/components/popover/services/popover.service';
+
+//          Toolbar
+export * from './lib/components/toolbar/toolbar.component';
+export * from './lib/components/toolbar/toolbar.module';
+export * from './lib/components/toolbar/interfaces/toolbar.interface';

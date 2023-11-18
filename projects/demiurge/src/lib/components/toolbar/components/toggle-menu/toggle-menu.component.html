@@ -1,0 +1,32 @@
+<div class="h-100">
+  <div class="offcanvas-header">
+    <b class="offcanvas-title text-danger" id="toggleMenuLabel">{{
+      config.toggleTitle | titlecase
+    }}</b>
+    <button
+      type="button"
+      class="btn text-danger"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
+      <i class="bi bi-opencollective"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body h-100 px-0">
+    <div class="list-group">
+      <a
+        *ngFor="let item of config.items"
+        (click)="navigate(item)"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+        class="list-group-item list-group-item-action"
+        [ngClass]="{
+          active: currentPath === item.url,
+          disabled: item.disabled
+        }"
+      >
+        {{ item.label | titlecase }}
+      </a>
+    </div>
+  </div>
+</div>
