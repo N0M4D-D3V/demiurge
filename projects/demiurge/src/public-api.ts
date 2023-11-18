@@ -38,3 +38,8 @@ export * from './lib/components/popover/services/popover.service';
 export * from './lib/components/toolbar/toolbar.component';
 export * from './lib/components/toolbar/toolbar.module';
 export * from './lib/components/toolbar/interfaces/toolbar.interface';
+
+//          Card
+export * from './lib/components/cards/card/card.component';
+export * from './lib/components/cards/card/card.interface';
+export * from './lib/components/cards/card/card.module';
