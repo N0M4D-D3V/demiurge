@@ -43,3 +43,7 @@ export * from './lib/components/toolbar/interfaces/toolbar.interface';
 export * from './lib/components/cards/card/card.component';
 export * from './lib/components/cards/card/card.interface';
 export * from './lib/components/cards/card/card.module';
+
+//          Card List
+export * from './lib/components/cards/card-list/card-list.component';
+export * from './lib/components/cards/card-list/card-list.module';

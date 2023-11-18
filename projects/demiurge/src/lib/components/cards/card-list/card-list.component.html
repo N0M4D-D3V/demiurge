@@ -1,0 +1,13 @@
+<div class="px-2">
+  <demi-card
+    class="text-center"
+    *ngFor="let item of configList"
+    [config]="item"
+  ></demi-card>
+</div>
+<div
+  class="text-center w-100 mt-5 text-success fw-bold"
+  *ngIf="!configList.length"
+>
+  NOTHING TO SHOW <i class="bi bi-bookmarks-fill"></i>
+</div>
