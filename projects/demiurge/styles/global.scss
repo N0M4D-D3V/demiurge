@@ -9,3 +9,10 @@
   --color-black: black;
   --color-white: white;
 }
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+  background-color: transparent;
+  border-color: transparent;
+}

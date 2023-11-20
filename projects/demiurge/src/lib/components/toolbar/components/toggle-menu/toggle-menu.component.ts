@@ -13,7 +13,7 @@ import {
 export class DemiToggleMenuComponent {
   @Input() config!: DemiToolbarConfig;
 
-  public currentPath: string = this.config.defaultPath;
+  public currentPath: string = this.config?.defaultPath || '';
 
   constructor(private readonly router: Router) {}
 

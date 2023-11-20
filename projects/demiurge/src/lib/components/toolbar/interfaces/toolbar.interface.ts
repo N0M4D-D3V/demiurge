@@ -5,8 +5,9 @@ export interface DemiToggleMenuItemConfig {
 }
 
 export interface DemiToolbarConfig {
-  title: string;
-  toggleTitle: string;
-  defaultPath: string;
-  items: DemiToggleMenuItemConfig[];
+  title?: string;
+  toggleable?: boolean;
+  toggleTitle?: string;
+  defaultPath?: string;
+  items?: DemiToggleMenuItemConfig[];
 }
