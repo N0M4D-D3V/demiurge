@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CardConfig } from '../card/card.interface';
+import { DemiCardConfig } from '../card/card.interface';
 
 @Component({
   selector: 'demi-card-list',
@@ -7,5 +7,5 @@ import { CardConfig } from '../card/card.interface';
   styleUrls: [],
 })
 export class DemiCardListComponent {
-  @Input() configList!: CardConfig[];
+  @Input() configList!: DemiCardConfig[];
 }

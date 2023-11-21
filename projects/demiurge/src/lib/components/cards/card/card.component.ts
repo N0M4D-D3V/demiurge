@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { CardConfig } from './card.interface';
+import { DemiCardConfig } from './card.interface';
 
 @Component({
   selector: 'demi-card',
   templateUrl: './card.component.html',
-  styleUrls: [],
+  styleUrls: ['./card.component.scss'],
 })
 export class DemiCardComponent {
-  @Input() config!: CardConfig;
+  @Input() config!: DemiCardConfig;
 
   constructor() {}
 
