@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NavigationStart, Router, Event } from '@angular/router';
 import { DemiToolbarConfig } from './interfaces/toolbar.interface';
 
@@ -9,6 +9,9 @@ import { DemiToolbarConfig } from './interfaces/toolbar.interface';
 })
 export class DemiToolbarComponent implements OnInit {
   @Input() config!: DemiToolbarConfig;
+  @Output() onLogout: EventEmitter<void> = new EventEmitter<void>();
+
+  public canToggle: boolean = true;
 
   constructor(private readonly router: Router) {}
 
@@ -17,7 +20,13 @@ export class DemiToolbarComponent implements OnInit {
       if (event instanceof NavigationStart) {
         const splitted: string[] = event.url.split('/');
         this.config.title = splitted[splitted.length - 1].replaceAll('-', ' ');
+        if (this.config.title === 'login') this.canToggle = false;
+        else this.canToggle = true;
       }
     });
+  }
+
+  public logout(): void {
+    this.onLogout.emit();
   }
 }

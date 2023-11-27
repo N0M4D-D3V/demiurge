@@ -18,10 +18,12 @@
 </nav>
 
 <demi-toggle-menu
+  *ngIf="canToggle"
   [config]="config"
+  (onLogout)="logout()"
   class="offcanvas offcanvas-start"
+  aria-labelledby="toggleMenuLabel"
   tabindex="-1"
   id="toggleMenu"
-  aria-labelledby="toggleMenuLabel"
 >
 </demi-toggle-menu>

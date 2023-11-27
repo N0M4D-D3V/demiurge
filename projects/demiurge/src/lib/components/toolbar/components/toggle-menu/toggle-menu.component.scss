@@ -1,0 +1,9 @@
+.list-group-item {
+  background-color: transparent !important;
+  color: var(--color-primary);
+  border-color: transparent;
+}
+
+.list-group-item.active {
+  color: var(--color-accent) !important;
+}
