@@ -1,9 +1,21 @@
 :root {
-  --color-primary: none;
+  --demiurge-50: #f9f7ed;
+  --demiurge-100: #f2eccf;
+  --demiurge-200: #e6d8a2;
+  --demiurge-300: #d7bc6d;
+  --demiurge-400: #caa445;
+  --demiurge-500: #bb8f37;
+  --demiurge-600: #ab7830;
+  --demiurge-700: #815427;
+  --demiurge-800: #6c4627;
+  --demiurge-900: #5d3b26;
+  --demiurge-950: #361f12;
+
+  --color-primary: var(--demiurge-600);
   --color-secondary: none;
   --color-tertiary: none;
 
-  --color-accent: #2479ff;
+  --color-accent: var(--demiurge-400);
   --color-cancel: red;
 
   --color-black: black;
@@ -15,4 +27,8 @@
 fieldset:disabled .btn {
   background-color: transparent;
   border-color: transparent;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
 }
