@@ -18,7 +18,7 @@
 </nav>
 
 <demi-toggle-menu
-  *ngIf="canToggle"
+  *ngIf="config.toggleable"
   [config]="config"
   (onLogout)="logout()"
   class="offcanvas offcanvas-start"
