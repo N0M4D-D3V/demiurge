@@ -1,4 +1,4 @@
-<div class="h-100 bg-dark" *ngIf="config.toggleable">
+<div class="h-100 bg-dark">
   <div class="offcanvas-header">
     <b class="offcanvas-title text-danger" id="toggleMenuLabel">{{
       config.toggleTitle | uppercase
@@ -23,7 +23,8 @@
           class="list-group-item list-group-item-action"
           [ngClass]="{
             active: currentPath === item.url,
-            disabled: item.disabled
+            disabled: item.disabled,
+            'd-hidden': item.hidden
           }"
         >
           <i class="bi {{ item.icon }}" *ngIf="item.icon"></i>

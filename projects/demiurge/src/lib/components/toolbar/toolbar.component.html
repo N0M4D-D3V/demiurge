@@ -1,24 +1,29 @@
-<nav class="navbar bg-body-dark sticky-top">
+<nav class="navbar sticky-top">
   <div class="container-fluid">
+    @if(currentConfig?.activeButtons?.includes('toggle')){
     <button
       class="btn text-primary"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#toggleMenu"
       aria-controls="toggleMenu"
-      [disabled]="!config.toggleable"
     >
       <i class="bi bi-opencollective"></i>
     </button>
+    } @if(currentConfig?.activeButtons?.includes('back')){
+    <button type="button" class="btn text-primary" (click)="onBack()">
+      <i class="bi bi-arrow-return-left"></i>
+    </button>
+    }
 
     <span class="text-primary"
-      ><b>{{ config.title | uppercase }}</b></span
+      ><b>{{ currentConfig?.label | uppercase }}</b></span
     >
   </div>
 </nav>
 
+@if(currentConfig?.toggleable){
 <demi-toggle-menu
-  *ngIf="config.toggleable"
   [config]="config"
   (onLogout)="logout()"
   class="offcanvas offcanvas-start"
@@ -27,3 +32,4 @@
   id="toggleMenu"
 >
 </demi-toggle-menu>
+}

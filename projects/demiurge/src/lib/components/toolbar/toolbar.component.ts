@@ -1,6 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { NavigationStart, Router, Event } from '@angular/router';
-import { DemiToolbarConfig } from './interfaces/toolbar.interface';
+import { Router, Event, NavigationEnd } from '@angular/router';
+import {
+  DemiToolbarMenuItemConfig,
+  DemiToolbarConfig,
+} from './interfaces/toolbar.interface';
+import { Location } from '@angular/common';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'demi-toolbar',
@@ -11,20 +16,28 @@ export class DemiToolbarComponent implements OnInit {
   @Input() config!: DemiToolbarConfig;
   @Output() onLogout: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private readonly router: Router) {}
+  public currentConfig!: DemiToolbarMenuItemConfig | undefined;
+
+  constructor(
+    private readonly router: Router,
+    private readonly location: Location
+  ) {}
 
   ngOnInit(): void {
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationStart) {
-        const splitted: string[] = event.url.split('/');
-        this.config.title = splitted[splitted.length - 1].replaceAll('-', ' ');
-        if (this.config.title === 'login') this.config.toggleable = false;
-        else this.config.toggleable = true;
-      }
-    });
+    this.router.events
+      .pipe(filter((item: Event) => item instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        this.currentConfig = this.config.items.find(
+          (item) => item.url === event.url
+        );
+      });
   }
 
   public logout(): void {
     this.onLogout.emit();
+  }
+
+  public onBack(): void {
+    this.location.back();
   }
 }

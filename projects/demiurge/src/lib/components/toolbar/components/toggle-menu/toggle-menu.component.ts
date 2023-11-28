@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import {
-  DemiToggleMenuItemConfig,
+  DemiToolbarMenuItemConfig,
   DemiToolbarConfig,
 } from '../../interfaces/toolbar.interface';
 
@@ -19,7 +19,7 @@ export class DemiToggleMenuComponent {
 
   constructor(private readonly router: Router) {}
 
-  public navigate(item: DemiToggleMenuItemConfig): void {
+  public navigate(item: DemiToolbarMenuItemConfig): void {
     this.currentPath = item.url;
     this.router.navigate([item.url]);
   }

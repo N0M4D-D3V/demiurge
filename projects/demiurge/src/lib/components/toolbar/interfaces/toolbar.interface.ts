@@ -1,14 +1,18 @@
-export interface DemiToggleMenuItemConfig {
+export interface DemiToolbarMenuItemConfig {
   label: string;
   url: string;
-  disabled?: string;
+  activeButtons?: DemiToolbarButtonType[];
+  toggleable?: boolean;
+  disabled?: boolean;
+  hidden?: boolean;
   icon?: string;
 }
 
 export interface DemiToolbarConfig {
   title?: string;
-  toggleable?: boolean;
   toggleTitle?: string;
   defaultPath?: string;
-  items?: DemiToggleMenuItemConfig[];
+  items: DemiToolbarMenuItemConfig[];
 }
+
+export type DemiToolbarButtonType = 'back' | 'toggle';
