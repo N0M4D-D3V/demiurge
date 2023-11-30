@@ -13,17 +13,18 @@ import { NgClass, NgFor } from '@angular/common';
           {{ message }}
         </h4>
         <div class="d-flex">
+          @for(btn of buttons; track btn.label; let l = $last){
           <button
-            *ngFor="let button of buttons; last as l"
-            (click)="onClick(button.handler)"
-            [class]="button.role ?? ''"
+            (click)="onClick(btn.handler)"
+            [class]="btn.role ?? ''"
             [ngClass]="{
               'dark-mode': darkMode,
               last: l
             }"
           >
-            {{ button.label }}
+            {{ btn.label }}
           </button>
+          }
         </div>
       </div>
     </div>

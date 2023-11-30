@@ -15,8 +15,8 @@
   <div class="offcanvas-body h-100 px-1">
     <div class="d-flex flex-align-start flex-column h-100">
       <div class="list-group overflow-y-auto h-85">
+        @for(item of config.items; track item.url;){
         <a
-          *ngFor="let item of config.items"
           (click)="navigate(item)"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
@@ -30,6 +30,7 @@
           <i class="bi {{ item.icon }}" *ngIf="item.icon"></i>
           {{ item.label | titlecase }}
         </a>
+        }
       </div>
       <div class="d-flex justify-content-end">
         <button
