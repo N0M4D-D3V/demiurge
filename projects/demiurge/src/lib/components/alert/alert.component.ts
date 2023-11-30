@@ -4,8 +4,8 @@ import { DemiAlertButton } from './alert.interface';
 import { NgClass, NgFor } from '@angular/common';
 
 @Component({
-    selector: 'demi-alert',
-    template: `
+  selector: 'demi-alert',
+  template: `
     <div class="overlay" [ngClass]="{ 'dark-mode': darkMode }">
       <div class="alert-box" [ngClass]="{ 'dark-mode': darkMode }">
         <h2 style="margin: 0; font-size: 20px">{{ title }}</h2>
@@ -28,9 +28,9 @@ import { NgClass, NgFor } from '@angular/common';
       </div>
     </div>
   `,
-    styleUrls: ['./alert.component.scss'],
-    standalone: true,
-    imports: [NgClass, NgFor],
+  styleUrls: ['./alert.component.scss'],
+  standalone: true,
+  imports: [NgClass, NgFor],
 })
 export class DemiAlertComponent {
   @Input() title: string = '';
