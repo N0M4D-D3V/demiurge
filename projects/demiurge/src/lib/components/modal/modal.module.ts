@@ -5,8 +5,7 @@ import { DemiModalService } from './modal.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule],
-  declarations: [DemiModalComponent],
-  providers: [DemiModalService],
+    imports: [BrowserModule, BrowserAnimationsModule, DemiModalComponent],
+    providers: [DemiModalService],
 })
 export class DemiModalModule {}

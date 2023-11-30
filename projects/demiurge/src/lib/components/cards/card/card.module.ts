@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DemiCardComponent } from './card.component';
 
 @NgModule({
-  declarations: [DemiCardComponent],
-  exports: [DemiCardComponent],
-  imports: [CommonModule],
-  providers: [],
-  bootstrap: [],
+    exports: [DemiCardComponent],
+    imports: [CommonModule, DemiCardComponent],
+    providers: [],
+    bootstrap: [],
 })
 export class DemiCardModule {}

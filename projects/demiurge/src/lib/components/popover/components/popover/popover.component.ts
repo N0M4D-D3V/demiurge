@@ -19,12 +19,13 @@ import {
   DemiAnimationCycle_Legacy,
   DemiPopoverAnimationData_Legacy,
 } from '../../popover.interface';
+import { NgClass } from '@angular/common';
 
 const ANIMATION_DURATION_MS = 100;
 
 @Component({
-  selector: 'demi-popover',
-  template: `
+    selector: 'demi-popover',
+    template: `
     <div class="popover-dialog">
       <div class="popover-container d-flex">
         <div class="arrow"></div>
@@ -34,8 +35,10 @@ const ANIMATION_DURATION_MS = 100;
       </div>
     </div>
   `,
-  styleUrls: ['./popover.component.scss'],
-  animations: [],
+    styleUrls: ['./popover.component.scss'],
+    animations: [],
+    standalone: true,
+    imports: [NgClass],
 })
 export class DemiPopoverComponent implements AfterViewInit {
   /**

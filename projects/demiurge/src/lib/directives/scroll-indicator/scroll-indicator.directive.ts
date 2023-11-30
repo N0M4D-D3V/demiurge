@@ -3,8 +3,9 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export type DemiScrollIndicatorType = 'side' | 'float';
 
 @Directive({
-  selector: '[demiScrollIndicator]',
-  exportAs: 'demiScrollIndicator',
+    selector: '[demiScrollIndicator]',
+    exportAs: 'demiScrollIndicator',
+    standalone: true,
 })
 export class DemiScrollIndicatorDirective {
   @Input() type: DemiScrollIndicatorType = 'side';

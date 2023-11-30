@@ -5,9 +5,8 @@ import { DemiPopoverService } from './services/popover.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule],
-  exports: [DemiPopoverComponent],
-  declarations: [DemiPopoverComponent],
-  providers: [DemiPopoverService],
+    imports: [BrowserModule, BrowserAnimationsModule, DemiPopoverComponent],
+    exports: [DemiPopoverComponent],
+    providers: [DemiPopoverService],
 })
 export class DemiPopoverModule {}

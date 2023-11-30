@@ -3,8 +3,7 @@ import { DemiAlertComponent } from './alert.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  exports: [DemiAlertComponent],
-  imports: [CommonModule],
-  declarations: [DemiAlertComponent],
+    exports: [DemiAlertComponent],
+    imports: [CommonModule, DemiAlertComponent],
 })
 export class DemiAlertComponentModule {}

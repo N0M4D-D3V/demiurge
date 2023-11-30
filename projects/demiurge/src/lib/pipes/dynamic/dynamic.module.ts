@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { DynamicPipe } from './dynamic.pipe';
 
 @NgModule({
-  imports: [],
-  exports: [DynamicPipe],
-  declarations: [DynamicPipe],
+    imports: [DynamicPipe],
+    exports: [DynamicPipe],
 })
 export class DynamicPipeModule {}

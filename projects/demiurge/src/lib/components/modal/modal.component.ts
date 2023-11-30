@@ -15,33 +15,28 @@ import {
 const ANIMATION_DURATION_MS = 300;
 
 @Component({
-  selector: 'demi-modal',
-  template: `
+    selector: 'demi-modal',
+    template: `
     <div class="modal-dialog">
       <div class="modal-content" [@position]="animOrigin ? 'origin' : 'moved'">
         <ng-content></ng-content>
       </div>
     </div>
   `,
-  styleUrls: ['./modal.component.scss'],
-  animations: [
-    trigger('position', [
-      state(
-        'origin',
-        style({
-          transform: 'translate(0%, 0%)',
-        })
-      ),
-      state(
-        'moved',
-        style({
-          transform: 'translate(-33%, 0%)',
-        })
-      ),
-      transition('origin => moved', animate(300 + 'ms ease-in-out')),
-      transition('moved => origin', animate(300 + 'ms ease-in-out')),
-    ]),
-  ],
+    styleUrls: ['./modal.component.scss'],
+    animations: [
+        trigger('position', [
+            state('origin', style({
+                transform: 'translate(0%, 0%)',
+            })),
+            state('moved', style({
+                transform: 'translate(-33%, 0%)',
+            })),
+            transition('origin => moved', animate(300 + 'ms ease-in-out')),
+            transition('moved => origin', animate(300 + 'ms ease-in-out')),
+        ]),
+    ],
+    standalone: true,
 })
 export class DemiModalComponent {
   /**

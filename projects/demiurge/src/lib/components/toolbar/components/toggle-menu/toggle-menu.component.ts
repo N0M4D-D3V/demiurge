@@ -4,11 +4,20 @@ import {
   DemiToolbarMenuItemConfig,
   DemiToolbarConfig,
 } from '../../interfaces/toolbar.interface';
+import { NgFor, NgClass, NgIf, UpperCasePipe, TitleCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'demi-toggle-menu',
-  templateUrl: './toggle-menu.component.html',
-  styleUrls: ['./toggle-menu.component.scss'],
+    selector: 'demi-toggle-menu',
+    templateUrl: './toggle-menu.component.html',
+    styleUrls: ['./toggle-menu.component.scss'],
+    standalone: true,
+    imports: [
+        NgFor,
+        NgClass,
+        NgIf,
+        UpperCasePipe,
+        TitleCasePipe,
+    ],
 })
 export class DemiToggleMenuComponent {
   @Input() config!: DemiToolbarConfig;

@@ -5,10 +5,9 @@ import { DemiToggleMenuComponent } from './components/toggle-menu/toggle-menu.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [DemiToolbarComponent, DemiToggleMenuComponent],
-  exports: [DemiToolbarComponent],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  providers: [],
-  bootstrap: [],
+    exports: [DemiToolbarComponent],
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, DemiToolbarComponent, DemiToggleMenuComponent],
+    providers: [],
+    bootstrap: [],
 })
 export class DemiToolbarModule {}

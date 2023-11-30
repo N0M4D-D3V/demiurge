@@ -13,12 +13,19 @@ import {
 } from './interfaces/toolbar.interface';
 import { Location } from '@angular/common';
 import { Subscription, debounceTime, filter } from 'rxjs';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DemiToggleMenuComponent } from './components/toggle-menu/toggle-menu.component';
 
 @Component({
-  selector: 'demi-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss'],
+    selector: 'demi-toolbar',
+    templateUrl: './toolbar.component.html',
+    styleUrls: ['./toolbar.component.scss'],
+    standalone: true,
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        DemiToggleMenuComponent,
+    ],
 })
 export class DemiToolbarComponent implements OnInit, OnDestroy {
   @Input() config!: DemiToolbarConfig;
