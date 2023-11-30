@@ -14,11 +14,22 @@
     <button type="button" class="btn text-primary" (click)="onBack()">
       <i class="bi bi-arrow-return-left"></i>
     </button>
+    } @if(currentConfig?.activeButtons?.includes('search')){
+    <form class="form-inline my-2 my-lg-0" [formGroup]="searchForm">
+      @if(showSearchInput){
+      <input
+        class="form-control fadein"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        formControlName="searching"
+      />
+      }
+      <button type="button" class="btn text-primary" (click)="search()">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
     }
-
-    <span class="text-primary"
-      ><b>{{ currentConfig?.label | uppercase }}</b></span
-    >
   </div>
 </nav>
 
