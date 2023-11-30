@@ -12,8 +12,8 @@ import {
   DemiToolbarConfig,
 } from './interfaces/toolbar.interface';
 import { Location } from '@angular/common';
-import { Subscription, filter } from 'rxjs';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Subscription, debounceTime, filter } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'demi-toolbar',
@@ -52,7 +52,8 @@ export class DemiToolbarComponent implements OnInit, OnDestroy {
 
     this.subForm = this.searchForm
       .get('searching')!!
-      .valueChanges.subscribe((value: string) => this.onSearch.emit(value));
+      .valueChanges.pipe(debounceTime(500))
+      .subscribe((value: string) => this.onSearch.emit(value));
   }
 
   public logout(): void {
