@@ -3,12 +3,12 @@ export * from './lib/abstract/abstract-observable';
 
 // DIRECTIVES
 //          Scroll Indicator
-export * from './lib/directives/scroll-indicator/scoll-indicator.module';
+
 export * from './lib/directives/scroll-indicator/scroll-indicator.directive';
 
 // PIPES
 //          Dynamic
-export * from './lib/pipes/dynamic/dynamic.module';
+
 export * from './lib/pipes/dynamic/dynamic.pipe';
 
 // SERVICES
@@ -20,7 +20,7 @@ export * from './lib/services/alert/alert.service';
 //          Alert
 export * from './lib/components/alert/alert.component';
 export * from './lib/components/alert/alert.interface';
-export * from './lib/components/alert/alert.component.module';
+
 
 //          Modal
 export * from './lib/components/modal/modal.module';
@@ -36,14 +36,14 @@ export * from './lib/components/popover/services/popover.service';
 
 //          Toolbar
 export * from './lib/components/toolbar/toolbar.component';
-export * from './lib/components/toolbar/toolbar.module';
+
 export * from './lib/components/toolbar/interfaces/toolbar.interface';
 
 //          Card
 export * from './lib/components/cards/card/card.component';
 export * from './lib/components/cards/card/card.interface';
-export * from './lib/components/cards/card/card.module';
+
 
 //          Card List
 export * from './lib/components/cards/card-list/card-list.component';
-export * from './lib/components/cards/card-list/card-list.module';
+
