@@ -1,4 +1,6 @@
 export interface DemiCardConfig {
+  id: string;
+
   title: string;
   description?: string;
 

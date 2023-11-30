@@ -1,3 +1,4 @@
+@defer(on viewport){
 <div
   class="card my-2  bg-dark text-primary {{ config.cssClass }} {{
     config.size
@@ -9,3 +10,11 @@
     <p class="card-text">{{ config.description }}</p>
   </div>
 </div>
+} @placeholder {
+<div class="card my-2 bg-dark text-primary fadein">
+  <div class="card-body">
+    <h3 class="card-title"></h3>
+    <p class="card-text"></p>
+  </div>
+</div>
+}
