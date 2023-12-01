@@ -2,18 +2,15 @@
 export * from './lib/abstract/abstract-observable';
 
 // DIRECTIVES
-//          Scroll Indicator
-
 export * from './lib/directives/scroll-indicator/scroll-indicator.directive';
 
 // PIPES
-//          Dynamic
-
 export * from './lib/pipes/dynamic/dynamic.pipe';
+export * from './lib/pipes/search/full-search.pipe';
 
 // SERVICES
-//          Alert
 export * from './lib/services/alert/alert.service';
+export * from './lib/services/toolbar/toolbar.service';
 
 // COMPONENTS
 //          Alert
