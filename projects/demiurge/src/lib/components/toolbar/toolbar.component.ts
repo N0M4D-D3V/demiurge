@@ -20,6 +20,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { DemiToggleMenuComponent } from './components/toggle-menu/toggle-menu.component';
+import { DemiToolbarService } from '../../services/toolbar/toolbar.service';
 
 @Component({
   selector: 'demi-toolbar',
@@ -31,7 +32,6 @@ import { DemiToggleMenuComponent } from './components/toggle-menu/toggle-menu.co
 export class DemiToolbarComponent implements OnInit, OnDestroy {
   @Input() config!: DemiToolbarConfig;
 
-  @Output() onSearch: EventEmitter<string> = new EventEmitter<string>();
   @Output() onLogout: EventEmitter<void> = new EventEmitter<void>();
 
   private subForm!: Subscription;
@@ -46,7 +46,8 @@ export class DemiToolbarComponent implements OnInit, OnDestroy {
   constructor(
     private readonly fb: FormBuilder,
     private readonly router: Router,
-    private readonly location: Location
+    private readonly location: Location,
+    private readonly demiToolbarService: DemiToolbarService
   ) {}
 
   ngOnInit(): void {
@@ -61,7 +62,7 @@ export class DemiToolbarComponent implements OnInit, OnDestroy {
     this.subForm = this.searchForm
       .get('searching')!!
       .valueChanges.pipe(debounceTime(500))
-      .subscribe((value: string) => this.onSearch.emit(value));
+      .subscribe((value: string) => this.demiToolbarService.searchIn(value));
   }
 
   public logout(): void {
