@@ -7,6 +7,7 @@ export * from './lib/directives/scroll-indicator/scroll-indicator.directive';
 // PIPES
 export * from './lib/pipes/dynamic/dynamic.pipe';
 export * from './lib/pipes/search/full-search.pipe';
+export * from './lib/pipes/format/separe.pipe';
 
 // SERVICES
 export * from './lib/services/alert/alert.service';
@@ -37,6 +38,9 @@ export * from './lib/components/toolbar/interfaces/toolbar.interface';
 //          Card
 export * from './lib/components/cards/card/card.component';
 export * from './lib/components/cards/card/card.interface';
+
+//          Card Img
+export * from './lib/components/cards/card-img/card-img.component';
 
 //          Card List
 export * from './lib/components/cards/card-list/card-list.component';
