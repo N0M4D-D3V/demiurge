@@ -35,12 +35,8 @@ export * from './lib/components/toolbar/toolbar.component';
 
 export * from './lib/components/toolbar/interfaces/toolbar.interface';
 
-//          Card
-export * from './lib/components/cards/card/card.component';
-export * from './lib/components/cards/card/card.interface';
-
-//          Card Img
-export * from './lib/components/cards/card-img/card-img.component';
-
-//          Card List
-export * from './lib/components/cards/card-list/card-list.component';
+//          Cards
+export * from './lib/components/cards/components/card/card.component';
+export * from './lib/components/cards/interfaces/card.interface';
+export * from './lib/components/cards/components/card-img/card-img.component';
+export * from './lib/components/cards/components/card-list/card-list.component';

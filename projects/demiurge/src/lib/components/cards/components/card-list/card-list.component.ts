@@ -6,21 +6,22 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { DemiCardConfig } from '../card/card.interface';
-import { DemiCardComponent } from '../card/card.component';
+import { DemiCardConfig, DemiCardItem } from '../../interfaces/card.interface';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Observable, Subscription } from 'rxjs';
-import { FullSearchPipe } from '../../../pipes/search/full-search.pipe';
-import { DemiToolbarService } from '../../../services/toolbar/toolbar.service';
+import { FullSearchPipe } from '../../../../pipes/search/full-search.pipe';
+import { DemiToolbarService } from '../../../../services/toolbar/toolbar.service';
+import { DemiCardComponent } from '../card/card.component';
 
 @Component({
   selector: 'demi-card-list',
   template: `
-    @if(config$ | async; as configs){
+    @if(items$ | async; as items){
     <div class="d-flex flex-wrap justify-content-around">
-      @for(conf of configs | fullsearch: searchValue; track conf.id){
+      @for(item of items | fullsearch: searchValue; track $index){
       <demi-card
-        [config]="conf"
+        [config]="config"
+        [item]="item"
         (onCardTouched)="cardTouched($event)"
       ></demi-card>
       }@empty {
@@ -35,13 +36,15 @@ import { DemiToolbarService } from '../../../services/toolbar/toolbar.service';
   standalone: true,
   imports: [NgFor, DemiCardComponent, NgIf, AsyncPipe, FullSearchPipe],
 })
-export class DemiCardListComponent<T = any> implements OnInit, OnDestroy {
+export class DemiCardListComponent<T extends DemiCardItem>
+  implements OnInit, OnDestroy
+{
   private subToolbar!: Subscription;
 
-  @Input() config$!: Observable<DemiCardConfig<T>[]>;
-  @Input() canSearch: boolean = false;
+  @Input() items$!: Observable<T[]>;
+  @Input() config!: DemiCardConfig;
 
-  @Output() onCardTouched: EventEmitter<DemiCardConfig<T>> = new EventEmitter();
+  @Output() onCardTouched: EventEmitter<T> = new EventEmitter();
 
   public searchValue: string = '';
 
@@ -53,8 +56,8 @@ export class DemiCardListComponent<T = any> implements OnInit, OnDestroy {
       .subscribe((value) => (this.searchValue = value ?? ''));
   }
 
-  public cardTouched(card: DemiCardConfig<T>): void {
-    this.onCardTouched.emit(card);
+  public cardTouched(response: T): void {
+    this.onCardTouched.emit(response);
   }
 
   ngOnDestroy(): void {
