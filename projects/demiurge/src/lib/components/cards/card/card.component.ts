@@ -1,18 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DemiCardConfig } from './card.interface';
 
 @Component({
-    selector: 'demi-card',
-    templateUrl: './card.component.html',
-    styleUrls: ['./card.component.scss'],
-    standalone: true,
+  selector: 'demi-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss'],
+  standalone: true,
 })
-export class DemiCardComponent {
-  @Input() config!: DemiCardConfig;
+export class DemiCardComponent<T = any> {
+  @Input() config!: DemiCardConfig<T>;
+
+  @Output() onCardTouched: EventEmitter<DemiCardConfig> = new EventEmitter();
 
   constructor() {}
 
-  public onCardTouched(): void {
-    this.config.onCardTouched();
+  public cardTouched(): void {
+    this.onCardTouched.emit(this.config);
   }
 }
