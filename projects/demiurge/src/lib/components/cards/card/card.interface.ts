@@ -1,15 +1,16 @@
-export interface DemiCardConfig {
+export interface DemiCardConfig<T = any> {
   id?: string;
 
   title: string;
   description?: string;
+  imgUrl?: string;
+
+  data?: T;
 
   isClickable?: boolean;
   cssClass?: string;
 
   size?: DemiCardSize;
-
-  onCardTouched(): void;
 }
 
 export enum DemiCardSize {
