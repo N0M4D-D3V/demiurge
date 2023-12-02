@@ -1,4 +1,11 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { DemiCardConfig } from '../card/card.interface';
 import { DemiCardComponent } from '../card/card.component';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
@@ -12,7 +19,10 @@ import { DemiToolbarService } from '../../../services/toolbar/toolbar.service';
     @if(config$ | async; as configs){
     <div class="d-flex flex-wrap justify-content-around">
       @for(conf of configs | fullsearch: searchValue; track conf.id){
-      <demi-card [config]="conf"></demi-card>
+      <demi-card
+        [config]="conf"
+        (onCardTouched)="cardTouched($event)"
+      ></demi-card>
       }@empty {
       <span class="text-center w-100 mt-5 text-danger fw-bold">
         NOTHING TO SHOW <i class="bi bi-bookmarks-fill"></i>
@@ -25,11 +35,13 @@ import { DemiToolbarService } from '../../../services/toolbar/toolbar.service';
   standalone: true,
   imports: [NgFor, DemiCardComponent, NgIf, AsyncPipe, FullSearchPipe],
 })
-export class DemiCardListComponent implements OnInit, OnDestroy {
+export class DemiCardListComponent<T = any> implements OnInit, OnDestroy {
   private subToolbar!: Subscription;
 
-  @Input() config$!: Observable<DemiCardConfig[]>;
+  @Input() config$!: Observable<DemiCardConfig<T>[]>;
   @Input() canSearch: boolean = false;
+
+  @Output() onCardTouched: EventEmitter<DemiCardConfig<T>> = new EventEmitter();
 
   public searchValue: string = '';
 
@@ -39,6 +51,10 @@ export class DemiCardListComponent implements OnInit, OnDestroy {
     this.subToolbar = this.tbService
       .searchObservable()
       .subscribe((value) => (this.searchValue = value ?? ''));
+  }
+
+  public cardTouched(card: DemiCardConfig<T>): void {
+    this.onCardTouched.emit(card);
   }
 
   ngOnDestroy(): void {
