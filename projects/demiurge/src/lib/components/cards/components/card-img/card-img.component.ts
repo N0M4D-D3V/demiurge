@@ -4,7 +4,7 @@ import { DemiCardConfig, DemiCardItem } from '../../interfaces/card.interface';
 @Component({
   selector: 'demi-card-img',
   template: `
-    @defer (on viewport) {
+    @if(item){ @defer (on viewport) {
     <div class="card text-bg-dark fadein" (click)="cardTouched()">
       <img src="{{ item.imgUrl }}" class="card-img" alt="novel cover" />
       <div class="card-img-overlay">
@@ -24,7 +24,7 @@ import { DemiCardConfig, DemiCardItem } from '../../interfaces/card.interface';
         <a class="btn btn-play"><i class="bi bi-eyeglasses"></i></a>
       </div>
     </div>
-    }
+    } }
   `,
   styleUrls: ['./card-img.component.scss'],
   standalone: true,
