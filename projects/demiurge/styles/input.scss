@@ -1,0 +1,17 @@
+input {
+  background-color: #333232 !important;
+  border-color: #333232 !important;
+
+  color: var(--demiurge-700) !important;
+
+  height: 7vh;
+}
+
+input:focus {
+  background-color: #333232 !important;
+  border-color: var(--color-primary) !important;
+
+  color: var(--color-primary) !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(126, 239, 104, 0.6) !important;
+}

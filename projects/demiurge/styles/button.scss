@@ -1,0 +1,16 @@
+button.btn-dark {
+  background-color: transparent;
+  height: 7vh;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+button.btn-dark:hover {
+  border-color: var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary) !important;
+}
+
+button.btn-dark:active {
+  background-color: var(--color-primary) !important;
+}
