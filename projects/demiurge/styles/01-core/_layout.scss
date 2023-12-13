@@ -1,0 +1,33 @@
+@import '../02-mixins/_functions.scss';
+/* LAYOUT */
+
+/* GUTTERS */
+$sm-gutter: rem(16);
+$desktop-gutter: rem(24);
+
+/* MARGINS */
+$sm-margin: rem(16);
+$md-margin: rem(40);
+$lg-margin: rem(60);
+
+/* COLUMNS */
+$sm-max-columns: 4;
+$md-max-columns: 8;
+$lg-max-columns: 12;
+
+/* MAX-WIDTH */
+$max-width: 1440px;
+
+/* BREAKPOINTS */
+$breakpoints: (
+  'sm': 320px,
+  'md': 768px,
+  // 'lg-s': 1024px,
+  'lg': 1280px
+);
+$bp: (
+  'sm': 360,
+  'md': 768,
+  // 'lg-s': 992px,
+  'lg': 992px
+);

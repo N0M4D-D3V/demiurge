@@ -1,0 +1,15 @@
+/* CORE */
+@import '01-core/_core.scss';
+/* MIXINS */
+@import '02-mixins/_layout.scss';
+@import '02-mixins/_animations.scss';
+@import '02-mixins/_transition.scss';
+@import '02-mixins/_grid.scss';
+@import '02-mixins/_typography.scss';
+@import '02-mixins/_functions.scss';
+/* FOUNDATIONS */
+@import '03-foundations/_color.scss';
+@import '03-foundations/_elevation.scss';
+/* BASE */
+@import '04-utils/_demiurge-icons.scss';
+

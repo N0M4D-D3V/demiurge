@@ -1,0 +1,190 @@
+html {
+  color: $cds-c-content-01;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+//IMG VEIL
+
+.veil {
+  &--light {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: $cds-veil-img;
+      opacity: 0;
+
+      content: '';
+    }
+  }
+
+  &--dark {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: $cds-veil-img;
+      opacity: 0.2;
+
+      content: '';
+    }
+  }
+}
+
+.cds-block {
+  padding-block: map-get($size, '10');
+  @include mq('md') {
+    padding-block: map-get($size, '12');
+  }
+  @include mq('lg') {
+    padding-block: map-get($size, '16');
+  }
+
+  &__title {
+    @include font-size($h--m);
+    font-weight: $fw-medium;
+  }
+
+  &--no-top {
+    padding-top: 0;
+  }
+}
+
+.item-info--highlighted {
+  @include flex($direction: row, $justify: flex-start, $align-items: center);
+  @include grid(12, 12);
+
+  .item-info__text {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+
+    min-height: 496px;
+    padding: map-get($size, '18') map-get($size, '16');
+
+    background-color: $cds-c-background-news;
+    transform: translate(0, -50%);
+    @include flex($direction: column, $justify: center, $align-items: center);
+    @include grid(6, 12);
+
+    p {
+      max-width: 432px;
+      margin-bottom: map-get($size, '08');
+
+      color: $cds-c-content-01;
+      @include font-size($h--m);
+      font-weight: $fw-medium;
+    }
+  }
+
+  .item-info__img {
+    position: inherit;
+    top: initial;
+
+    height: 576px;
+
+    transform: none;
+    @include grid(7, 12);
+  }
+
+  .item-info__img img {
+    height: 100%;
+  }
+}
+
+//FOOTER ANIMATION
+.display-none {
+  display: none;
+}
+
+.app-footer {
+  position: initial;
+
+  display: block;
+  width: 100vw;
+
+  .cds-logo {
+    .logo-l {
+      display: block;
+      width: 305px;
+      @include mq('lg') {
+        display: block;
+      }
+    }
+
+    .logo-d {
+      display: none;
+      @include mq('lg') {
+        display: none;
+      }
+    }
+  }
+}
+
+.cds-link--singin {
+  color: $cds-c-content-01;
+
+  &:hover {
+    color: $cds-c-content-04;
+
+    .icon-item {
+      .cds-icon {
+        &::before {
+          color: $cds-c-content-04;
+        }
+      }
+    }
+  }
+
+  &::before {
+    background-color: $cds-c-content-04;
+  }
+}
+
+.sbdocs-wrapper {
+  .sbdocs-content {
+    max-width: 100%;
+  }
+}
+
+.section-hotels__warp {
+  .app-accordion {
+    .mat-expansion-panel-content .mat-expansion-panel-body {
+      padding-left: 0;
+
+      border-color: $cds-c-borders-b01;
+    }
+  }
+}
+
+body,
+app-root,
+ion-app,
+ion-router-outlet,
+.ion-page {
+  display: block;
+  width: 100vw;
+  height: 100dvh;
+}

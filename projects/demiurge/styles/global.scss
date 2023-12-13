@@ -1,41 +1,27 @@
-:root {
-  --demiurge-50: #f9f7ed;
-  --demiurge-100: #f2eccf;
-  --demiurge-200: #e6d8a2;
-  --demiurge-300: #d7bc6d;
-  --demiurge-400: #caa445;
-  --demiurge-500: #bb8f37;
-  --demiurge-600: #ab7830;
-  --demiurge-700: #815427;
-  --demiurge-800: #6c4627;
-  --demiurge-900: #5d3b26;
-  --demiurge-950: #361f12;
+@import './01-core/_core.scss';
 
-  --color-primary: var(--demiurge-600);
-  --color-secondary: none;
-  --color-tertiary: none;
+@import './02-mixins/_animations.scss';
+@import './02-mixins/_grid.scss';
+@import './02-mixins/_layout.scss';
+@import './02-mixins/_transition.scss';
+@import './02-mixins/_typography.scss';
 
-  --color-accent: var(--demiurge-400);
-  --color-cancel: red;
+@import './03-foundations/_color.scss';
+@import './03-foundations/_typography.scss';
+@import './03-foundations/_layout.scss';
 
-  --color-black: black;
-  --color-white: white;
-}
+@import './04-utils/_animations.scss';
+@import './04-utils/_demiurge-icons.scss';
+@import './04-utils/_keyframes.scss';
 
-.d-hidden {
-  display: none;
-}
+@import './05-base/_font.scss';
+@import './05-base/_normalize.scss';
+@import './05-base/_base.scss';
 
-.btn.disabled,
-.btn:disabled,
-fieldset:disabled .btn {
-  background-color: transparent;
-  border-color: transparent;
-}
+@import './05-base/_restyle.scss';
 
-.text-primary {
-  color: var(--color-primary) !important;
-}
+/* COMPONENTS */
+@import './06-components/_components.scss';
 
 .h-85 {
   height: 85% !important;

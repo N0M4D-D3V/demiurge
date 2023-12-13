@@ -1,0 +1,14 @@
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.h-85 {
+  height: 85% !important;
+}

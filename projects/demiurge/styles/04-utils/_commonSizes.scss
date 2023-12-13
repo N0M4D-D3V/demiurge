@@ -1,0 +1,23 @@
+.p--full {
+  padding-block: map-get($size, '10');
+  @include mq('md') {
+    padding-block: map-get($size, '12');
+  }
+  @include mq('lg') {
+    padding-block: map-get($size, '16');
+  }
+}
+
+.p--mid {
+  padding-block: map-get($size, '07');
+  @include mq('md') {
+    padding-block: map-get($size, '08');
+  }
+  @include mq('lg') {
+    padding-block: map-get($size, '10');
+  }
+}
+
+.p--reset {
+  padding-block: 0;
+}

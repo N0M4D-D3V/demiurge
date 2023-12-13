@@ -1,0 +1,337 @@
+@import '../_common.scss';
+
+//SEARCHBAR ANIMATION
+
+.search-bar {
+  display: flex;
+  position: relative;
+  z-index: 1000;/*
+  // @include mq('md') {
+  //   display: flex;
+  // }
+  // &--mb {
+  //   display: flex;
+  //   @include mq('md') {
+  //     display: none;
+  //   }
+  // } */
+  &:not(.app-search--top-header) {
+  }
+
+  &.app-search--top-header {
+    .searcher-box {
+      &:not(.active-search) {
+        bottom: calc(100% - 150px);
+        bottom: calc(100% - map-get($size, '18'));
+        top: inherit;
+        width: 100%;
+        max-width: 100%;
+        background-color: $cds-c-background-02;
+        transform: translate(-50%, 0);
+        @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+        @include mq('md') {
+          bottom: calc(100% - 126px);
+          top: inherit;
+          min-height: map-get($size, '12');
+        }
+        @include mq('lg') {
+          bottom: calc(100% - 164px);
+          top: inherit;
+          min-height: map-get($size, '14');
+        }
+
+        &::before {
+          content: '';
+          width: 100vw;
+          height: 1px;
+          position: absolute;
+          left: 0;
+          top: 1px;
+          z-index: 50;
+          background-color: $cds-c-borders-b01;
+        }
+        &::after {
+          content: '';
+          width: 100vw;
+          height: 1px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-color: $cds-c-borders-b01;
+        }
+
+        /* // &.active-search {
+        //   background-color: green;
+        // } */
+        .type-selection-header {
+          @include mq('md') {
+            top: 22px;
+          }
+          @include mq('lg') {
+            top: 38px;
+          }
+          position: absolute;
+        }
+      }
+    }
+  }
+  &.app-search--top {
+    .searcher-box {
+      z-index: 1000;
+      &:not(.active-search) {
+        bottom: calc(100% - map-get($size, '12'));
+        top: inherit;
+        width: 100%;
+        max-width: 100%;
+        background-color: $cds-c-background-02;
+
+        transform: translate(-50%, 0);
+        @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+        @include mq('md') {
+          bottom: calc(100% - map-get($size, '12'));
+          top: inherit;
+          min-height: map-get($size, '12');
+        }
+        @include mq('lg') {
+          bottom: calc(100% - map-get($size, '14'));
+          top: inherit;
+          min-height: map-get($size, '14');
+        }
+
+        /* // &.active-search {
+        //   background-color: blue;
+        // } */
+        .type-selection-header {
+          @include mq('md') {
+            top: 22px;
+          }
+          @include mq('lg') {
+            top: 38px;
+          }
+        }
+      }
+    }
+  }
+
+  .searcher-box {
+    position: fixed;
+    top: initial;
+    bottom: map-get($size, '07');
+    left: 50%;
+    z-index: 888;
+
+    display: flex;
+    width: calc(100% - map-get($size, '08'));
+    max-width: 100%;
+    height: fit-content;
+    min-height: map-get($size, '11');
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(31, 32, 34, 0.04);
+    transform: translate(-50%, 0);
+    @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0.3s);
+    @include mq('md') {
+      @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+      bottom: map-get($size, '08');
+      width: calc(100% - map-get($size, '10'));
+      padding: 0;
+      max-width: 1320px;
+      min-height: map-get($size, '14');
+    }
+    @include mq('lg') {
+      bottom: map-get($size, '11');
+      width: calc(100% - map-get($size, '14'));
+      min-height: map-get($size, '14');
+      padding: 0;
+    }
+    .type-selection-header {
+      position: relative;
+      top: 0;
+    }
+    .wrapper {
+      position: relative;
+      padding: 0 !important;
+      max-width: 1320px;
+    }
+
+    &.active-search {
+      width: 100%;
+      max-width: 1440px;
+      z-index: 1005;
+      bottom: calc(100% - 68px);
+      transform: translate(-50%, 0);
+      @include transition(all, 0.3s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+      @include mq('md') {
+        @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+        bottom: calc(100% - 148px);
+        padding: 0;
+        max-width: 100%;
+        min-height: map-get($size, '14');
+        padding: map-get($size, '07');
+      }
+      @include mq('lg') {
+        bottom: calc(100% - 170px);
+        padding: map-get($size, '07') map-get($size, '12');
+      }
+
+      .close-searchbar {
+        @include mq('md') {
+          animation-name: active-searchbar-animation-close-searchbar;
+          animation-duration: 1s;
+          animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          animation-delay: 0s;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      /* // .searcher-box__container {
+      //   border-width: 1px 0px 1px 1px;
+      //   border-style: solid;
+      //   border-color: $cds-c-borders-b01;
+      // } */
+    }
+    &.app-search--top-header {
+      &:not(.active-search) {
+        bottom: calc(100% - 150px);
+        bottom: calc(100% - map-get($size, '18'));
+
+        width: 100%;
+        max-width: 1440px;
+
+        transform: translate(-50%, 0);
+        @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+        @include mq('md') {
+          bottom: calc(100% - 126px);
+          min-height: map-get($size, '12');
+        }
+        @include mq('lg') {
+          bottom: calc(100% - 164px);
+
+          min-height: map-get($size, '14');
+        }
+
+        &.active-search {
+          background-color: green;
+        }
+        .type-selection-header {
+          @include mq('md') {
+            top: 22px;
+          }
+          @include mq('lg') {
+            top: 38px;
+          }
+        }
+      }
+    }
+    &.app-search--top {
+      &:not(.active-search) {
+        bottom: calc(100% - map-get($size, '12'));
+
+        width: 100%;
+        max-width: 1440px;
+
+        transform: translate(-50%, 0);
+        @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+        @include mq('md') {
+          bottom: calc(100% - map-get($size, '12'));
+
+          min-height: map-get($size, '12');
+        }
+        @include mq('lg') {
+          bottom: calc(100% - map-get($size, '14'));
+
+          min-height: map-get($size, '14');
+        }
+
+        /* // &.active-search {
+        //   background-color: blue;
+        // } */
+        .type-selection-header {
+          @include mq('md') {
+            top: 22px;
+          }
+          @include mq('lg') {
+            top: 38px;
+          }
+        }
+      }
+    }
+  }
+
+  &--init-top {
+    .searcher-box {
+      &:not(.active-search) {
+        bottom: calc(100% - 150px);
+        bottom: calc(100% - map-get($size, '18'));
+        width: 100%;
+        max-width: 1440px;
+        transform: translate(-50%, 0);
+        @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+        @include mq('md') {
+          bottom: calc(100% - 126px);
+          min-height: map-get($size, '12');
+          bottom: initial;
+          top: 85px;
+        }
+        @include mq('lg') {
+          bottom: calc(100% - 164px);
+          min-height: map-get($size, '14');
+          bottom: initial;
+          top: 85px;
+        }
+        .type-selection-header {
+          display: none;
+        }
+        &.app-search--top {
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+.search-bar-storybook {
+  &.app-header {
+    &--hide {
+      position: fixed;
+      top: 0px;
+
+      width: 100%;
+      max-width: 1440px;
+      @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+
+      .cds-header {
+        background: $cds-c-background-02;
+        @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+      }
+    }
+
+    .cds-logo {
+      .logo-d {
+        display: block;
+        @include mq('lg') {
+          display: none;
+        }
+      }
+
+      .logo-l {
+        display: none;
+        @include mq('lg') {
+          display: block;
+        }
+      }
+    }
+
+    &--show {
+      position: fixed;
+
+      width: 100%;
+      max-width: 1440px;
+      @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+
+      .cds-header {
+        background: $cds-c-background-02;
+        @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+      }
+    }
+  }
+}

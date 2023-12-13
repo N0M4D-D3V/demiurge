@@ -1,0 +1,7 @@
+// mixin to call some animations
+@mixin animation($name, $duration, $timing, $delay: 0) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-delay: $delay;
+}

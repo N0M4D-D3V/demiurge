@@ -1,0 +1,292 @@
+@import '../02-mixins/_functions.scss';
+
+$ff-text: 'Inter', sans-serif;
+$ff-icons: 'cds-icons';
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+
+/* HEADINGS */
+$h--xxl: (
+  base: (
+    rem(44),
+    1.136em,
+    fls(44, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(44),
+    1.136em,
+    fls(44, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(44),
+    1.136em,
+    fls(44, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(64),
+    1.25em,
+    fls(64, 3, false),
+    $ff-text
+  )
+);
+$h--xl: (
+  base: (
+    rem(32),
+    fls(32, 3, false),
+    0,
+    $ff-text
+  ),
+  sm: (
+    rem(32),
+    fls(32, 3, false),
+    0,
+    $ff-text
+  ),
+  md: (
+    rem(32),
+    fls(32, 3, false),
+    0,
+    $ff-text
+  ),
+  lg: (
+    rem(56),
+    1.071em,
+    fls(56, 3, false),
+    $ff-text
+  )
+);
+$h--l: (
+  base: (
+    rem(30),
+    1.06em,
+    fls(30, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(30),
+    1.06em,
+    fls(30, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(30),
+    1.06em,
+    fls(30, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(48),
+    1.125em,
+    fls(48, 3, false),
+    $ff-text
+  )
+);
+$h--m: (
+  base: (
+    rem(28),
+    1.071em,
+    fls(28, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(28),
+    1.071em,
+    fls(28, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(28),
+    1.071em,
+    fls(28, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(40),
+    1.15em,
+    fls(40, 3, false),
+    $ff-text
+  )
+);
+/* BODY */
+$b--xxl: (
+  base: (
+    rem(48),
+    1.166em,
+    fls(24, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(48),
+    1.166em,
+    fls(24, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(48),
+    1.166em,
+    fls(24, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(64),
+    1.0625em,
+    fls(32, 3, false),
+    $ff-text
+  )
+);
+$b--xl: (
+  base: (
+    rem(24),
+    1.166em,
+    fls(24, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(24),
+    1.166em,
+    fls(24, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(24),
+    1.166em,
+    fls(24, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(32),
+    1.0625em,
+    fls(32, 3, false),
+    $ff-text
+  )
+);
+$b--l: (
+  base: (
+    rem(18),
+    1.333em,
+    fls(18, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(18),
+    1.333em,
+    fls(18, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(18),
+    1.333em,
+    fls(18, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(24),
+    1.166em,
+    fls(24, 3, false),
+    $ff-text
+  )
+);
+$b--m: (
+  base: (
+    rem(16),
+    1.5em,
+    fls(16, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(16),
+    1.5em,
+    fls(16, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(16),
+    1.5em,
+    fls(16, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(18),
+    1.5em,
+    fls(18, 3, false),
+    $ff-text
+  )
+);
+$b--s: (
+  base: (
+    rem(14),
+    1.571em,
+    fls(14, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(14),
+    1.571em,
+    fls(14, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(14),
+    1.571em,
+    fls(14, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(16),
+    1.5em,
+    fls(16, 3, false),
+    $ff-text
+  )
+);
+$b--xs: (
+  base: (
+    rem(12),
+    1.33em,
+    fls(12, 3, false),
+    $ff-text
+  ),
+  sm: (
+    rem(12),
+    1.33em,
+    fls(12, 3, false),
+    $ff-text
+  ),
+  md: (
+    rem(12),
+    1.33em,
+    fls(12, 3, false),
+    $ff-text
+  ),
+  lg: (
+    rem(14),
+    1.571em,
+    fls(14, 3, false),
+    $ff-text
+  )
+);
+$b--xxs: (
+  base: (
+    rem(12),
+    1.33em,
+    fls(12, 3, false),
+    $ff-text
+  )
+);
+$types_all: (
+  h--xxl: $h--xxl,
+  h--xl: $h--xl,
+  h--l: $h--l,
+  h--m: $h--m,
+  b--xl: $b--xl,
+  b--l: $b--l,
+  b--m: $b--m,
+  b--s: $b--s,
+  b--xs: $b--xs,
+  b--xxs: $b--xxs
+);
+/* // la idea es hacer lo mismo que types_all pero solo con los token tipograficos que tengan bold // */

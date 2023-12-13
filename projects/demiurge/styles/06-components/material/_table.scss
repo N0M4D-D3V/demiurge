@@ -1,0 +1,66 @@
+@import '../../_common.scss';
+.cds-mat-tab {
+  background-color: transparent;
+  .mat-mdc-header-row {
+    background-color: #e1dbd0;
+    background-blend-mode: multiply;
+    height: map-get($size, '05');
+    @include mq('md') {
+      height: 22px;
+    }
+    .mat-mdc-header-cell {
+      border: 0;
+      @include font-size($b--xs);
+      color: $cds-c-content-01;
+      font-weight: $fw-light;
+      padding: map-get($size, '03') map-get($size, '03') map-get($size, '03') map-get($size, '05');
+      @include mq('md') {
+        padding: map-get($size, '03') map-get($size, '07');
+      }
+    }
+  }
+  .mdc-data-table__content {
+    background-color: $cds-c-background-02;
+    .mdc-data-table__row {
+      .mdc-data-table__cell {
+        @include font-size($b--xs);
+        color: $cds-c-content-01;
+        font-weight: $fw-regular;
+        vertical-align: text-top;
+        padding: map-get($size, '03') map-get($size, '03') map-get($size, '03') map-get($size, '05');
+        @include mq('md') {
+          padding: map-get($size, '05') map-get($size, '07');
+        }
+      }
+    }
+  }
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  .mov,
+  .import,
+  .price {
+    @include font-size($b--xs);
+    color: $cds-c-content-01;
+    font-weight: $fw-semibold;
+    margin-bottom: map-get($size, '02');
+  }
+  .hotel,
+  .expiration {
+    @include font-size($b--xxs);
+    color: $cds-c-content-01;
+    font-weight: $fw-light;
+    margin-bottom: map-get($size, '02');
+  }
+  .bookingCode {
+    margin-top: map-get($size, '02');
+    @include font-size($b--xxs);
+    color: #646b79;
+    font-weight: $fw-light;
+  }
+  .input-succed {
+    color: #5f9b75;
+  }
+}

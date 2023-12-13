@@ -1,0 +1,19 @@
+@mixin flex($direction: row, $justify: flex-start, $align-items: flex-start, $wrap: wrap) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  -webkit-box-align: $align-items;
+  -ms-flex-align: $align-items;
+  align-items: $align-items;
+  -webkit-box-pack: $justify;
+  -ms-flex-pack: $justify;
+  justify-content: $justify;
+}
+
+@mixin grid-columns($n, $sm-gap: map-get($size, '05'), $md-gap: map-get($size, '07')) {
+  display: grid;
+  grid-column-gap: $sm-gap;
+  grid-template-columns: repeat($n, 1fr);
+  @include mq('md') {
+    grid-column-gap: $md-gap;
+  }
+}

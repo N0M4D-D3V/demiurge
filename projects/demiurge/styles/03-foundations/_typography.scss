@@ -1,0 +1,8 @@
+/* @import '../02-mixins/_typography.scss';
+
+@each $name, $value in $types_all {
+  .cds-#{$name} {
+    @include font-size($value);
+  }
+}
+ */

@@ -1,0 +1,25 @@
+@import '../02-mixins/_functions.scss';
+/* SPACE and SIZE */
+/* // Numbers between () are pixels. There is a funtion than converts it on rem
+// Ej. '05': rem(16), = '05': 16px, */
+
+$size: (
+  '01': rem(2),
+  '02': rem(4),
+  '03': rem(8),
+  '04': rem(12),
+  '05': rem(16),
+  '06': rem(20),
+  '07': rem(24),
+  '08': rem(32),
+  '09': rem(40),
+  '10': rem(48),
+  '11': rem(56),
+  '12': rem(64),
+  '13': rem(72),
+  '14': rem(80),
+  '15': rem(88),
+  '16': rem(96),
+  '17': rem(112),
+  '18': rem(128)
+);

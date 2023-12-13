@@ -1,0 +1,85 @@
+@import '../01-core/_color.scss';
+
+/* BASE COLOR */
+$color-primary: var($demiurge-600);
+$color-secondary: none;
+$color-tertiary: none;
+$color-accent: var($demiurge-400);
+$color-cancel: $color-red-demiurge;
+$color-black: $color-black-demiurge;
+$color-white: $color-white-demiurge;
+
+/* CONTENT */
+$cds-c-content-01: $color-black-demiurge;
+$cds-c-content-02: $color-white-demiurge;
+$cds-c-content-03: $color-gray-400;
+$cds-c-content-04: $color-blue-demiurge;
+$cds-c-content-05: $color-gray-200;
+$cds-c-content-06: $color-siena-400;
+
+/* BACKGROUND */
+$cds-c-background-01: $color-black-demiurge;
+$cds-c-background-02: $color-white-demiurge;
+$cds-c-background-03: $color-siena-100;
+$cds-c-background-04: $color-blue-demiurge;
+$cds-c-background-05: $color-siena-400;
+$cds-c-background-06: $color-gray-900;
+$cds-c-background-07: $color-blue-200;
+$cds-c-background-08: $color-cream-demiurge;
+$cds-c-background-09: $color-white02-demiurge;
+$cds-c-background-10: $color-siena-200;
+$cds-c-background-11: $color-gray-100;
+
+$cds-c-background-rewards-logged: $color-siena-100;
+$cds-c-background-news: $color-cream-demiurge;
+
+/* BORDERS */
+$cds-c-borders-b01: $color-white02-demiurge;
+$cds-c-border-02: $color-blue-demiurge;
+$cds-c-border-03: $color-gray-100;
+$cds-c-border-04: $color-black-demiurge;
+$cds-c-border-05: $color-border-line-grey;
+$cds-c-border-06: $color-gray-200;
+$cds-c-border-07: $color-blue-300;
+$cds-c-border-08: $color-siena-250;
+
+/* BUTTONS */
+$cds-btn-bg-highlight-hover--on-light: $color-siena-200;
+$cds-btn-bg-highlight-hover--on-dark: $color-gray-700;
+$cds-btn-c-regular--disabled: $color-gray-200;
+$cds-btn-bg-regular--disabled: $color-gray-200;
+$cds-btn-c-highlight--disabled: $color-gray-200;
+$cds-btn-bg-hightlight--disabled: $color-gray-100;
+
+/* LINKS */
+$cds-link-color--ondark: $color-gray-400;
+$cds-link-color--onlight: $color-white-demiurge;
+
+/* TAGS */
+$cds-tag-bg--basic: $color-siena-100;
+$cds-tag-bg--promo: $color-blue-demiurge;
+$cds-tag-bg--killer: $color-killer;
+
+/* BORDERS */
+$cds-c-border-01: $color-top--secondary;
+
+/* INPUTS */
+$cds-c-input-bg01: $color-blue-input-demiurge;
+
+/* SCROLLBAR */
+$cds-webkit-scrollbar: $color-gray-100;
+$cds-webkit-scrollbar-thumb: $color-gray-200;
+$cds-webkit-scrollbar-thumb-hover: $color-gray-400;
+
+$cds-c-input-bg02: $color-blue-200;
+
+/* VEIL */
+$cds-veil-img: $color-veil--light;
+
+/* WARNINGS*/
+$cds-warning-info: $color-siena-200;
+$cds-warning-error: $color-error--light;
+
+/* ANNOUNCEMENTS*/
+$cds-announcement-succes: $color-sucess--light;
+$cds-announcement-error: $color-error--light;

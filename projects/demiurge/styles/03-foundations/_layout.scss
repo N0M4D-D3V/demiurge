@@ -1,0 +1,23 @@
+/* @import '../02-mixins/_layout.scss';
+@for $i from 1 through $sm-max-columns {
+  .col-sm-#{$i} {
+    @include grid(#{$i}, 4);
+  }
+}
+
+@for $i from 1 through $md-max-columns {
+  .col-md-#{$i} {
+    @include mq('md') {
+      @include grid(#{$i}, 8);
+    }
+  }
+}
+
+@for $i from 1 through $lg-max-columns {
+  .col-lg-#{$i} {
+    @include mq('lg') {
+      @include grid(#{$i}, 12);
+    }
+  }
+}
+ */

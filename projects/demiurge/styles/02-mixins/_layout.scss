@@ -1,0 +1,74 @@
+@import '../01-core/_layout.scss';
+
+/// MIXIN - RESPONSIVE MEDIA QUERYS ///////
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+/* MQ FOR ORIENTATION */
+@mixin mq-orientation($orientation: portrait) {
+  @media screen and (orientation: $orientation) {
+    @content;
+  }
+}
+// Calculate columns size without gutters //
+@function w-grid-full($columns, $max-columns: $sm-max-columns) {
+  $width: (calc((100% / $max-columns) * $columns));
+  @return ($width);
+}
+
+////// function calculate column fluid size
+@function w-grid($n, $max-columns, $gutter) {
+  $width: calc(
+    (((100% - ((#{$max-columns} - 1) * #{$gutter})) / #{$max-columns}) * #{$n}) + ((#{$n} - 1) * #{$gutter})
+  );
+  @return ($width);
+}
+
+///// mixin to apply different gutters //
+@mixin grid($n, $max-columns, $gutter: $sm-gutter) {
+  @if $max-columns <= $md-max-columns {
+    width: w-grid($n, $max-columns, $gutter);
+  } @else {
+    width: w-grid($n, $max-columns, $desktop-gutter);
+  }
+}
+
+/* WRAPPER CONTAINER */
+.wrapper {
+  width: 100%;
+  max-width: calc(100% + #{$sm-margin} * 2);
+  margin: 0 auto;
+  padding: 0 $sm-margin;
+  @include mq('md') {
+    max-width: calc(100% + #{$md-margin} * 2);
+    padding: 0 $md-margin;
+  }
+  @include mq('lg') {
+    max-width: calc(#{$max-width} + #{$lg-margin} * 2);
+    padding: 0 $lg-margin;
+  }
+}
+
+@mixin wrapper() {
+  width: 100%;
+  max-width: calc(100% + #{$sm-margin} * 2);
+  margin: 0 auto;
+  padding: 0 $sm-margin;
+  @include mq('md') {
+    max-width: calc(100% + #{$md-margin} * 2);
+    padding: 0 $md-margin;
+  }
+  @include mq('lg') {
+    max-width: calc(#{$max-width} + #{$lg-margin} * 2);
+    padding: 0 $lg-margin;
+  }
+}

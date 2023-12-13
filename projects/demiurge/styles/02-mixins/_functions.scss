@@ -1,0 +1,17 @@
+@use "sass:math";
+
+@function rem($pixels, $context: 16) {
+  @return math.div($pixels, $context) * 1rem;
+}
+
+@function em($pixels, $context: 16) {
+  @return math.div($pixels, $context) * 1rem;
+}
+
+@function fls($fs, $percentaje, $state: true) {
+  @if $state == true {
+    @return 'calc(' + rem($fs * math.div($percentaje, 100)) + ')';
+  } @else {
+    @return 'calc(' + rem($fs * math.div($percentaje, 100)) + ' * -1)';
+  }
+}

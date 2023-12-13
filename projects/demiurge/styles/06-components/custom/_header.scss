@@ -1,0 +1,111 @@
+@import '../_common.scss';
+
+//HEADER ANIMATION
+.app-header {
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background: $cds-c-background-02;
+  @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+  @include mq('md') {
+    width: calc(100% - map-get($size, '10'));
+    width: 100%;
+  }
+  @include mq('lg') {
+    position: fixed;
+    width: calc(100% - map-get($size, '14'));
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .cds-header {
+    background: $cds-c-background-02;
+    max-width: 1440px;
+    margin: 0 auto;
+    @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+  }
+
+  &--hide {
+    position: fixed;
+    top: -90px;
+
+    width: 100%;
+    max-width: 100%;
+    @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+    &.searcher-box {
+      top: inherit;
+      bottom: calc(100vh - map-get($size, '11'));
+      @include mq('md') {
+        top: inherit;
+        bottom: calc(100vh - map-get($size, '12'));
+      }
+      @include mq('lg') {
+        top: inherit;
+        bottom: calc(100vh - map-get($size, '14'));
+      }
+    }
+    .cds-header {
+      background: $cds-c-background-02;
+      @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+    }
+  }
+
+  .cds-logo {
+    .logo-d {
+      display: block;
+      @include mq('lg') {
+        display: none;
+      }
+    }
+
+    .logo-l {
+      display: none;
+      @include mq('lg') {
+        display: block;
+      }
+    }
+  }
+
+  &--show {
+    position: fixed;
+
+    width: 100%;
+    max-width: 100%;
+    @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+    /* // .app-header{
+
+    // } */
+    &.searcher-box {
+      top: inherit;
+      bottom: calc(100vh - 120px);
+      @include mq('md') {
+        top: inherit;
+        bottom: calc(100vh - map-get($size, '18'));
+      }
+      @include mq('lg') {
+        top: inherit;
+        bottom: calc(100vh - 165px);
+      }
+    }
+    .cds-logo {
+      .logo-d {
+        display: block;
+      }
+
+      .logo-l {
+        display: none;
+      }
+    }
+
+    .cds-header {
+      background: $cds-c-background-02;
+      max-width: 1440px;
+      margin: 0 auto;
+      @include transition(all, 0.8s, cubic-bezier(0.165, 0.84, 0.44, 1), 0s);
+    }
+  }
+}

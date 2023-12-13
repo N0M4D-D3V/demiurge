@@ -1,0 +1,21 @@
+@import '../../_common.scss';
+//TABS - RESTYLE MATERIAL
+.mdc-snackbar {
+  .mdc-snackbar__surface {
+    border-radius: 0 !important;
+    background-color: $cds-c-background-01 !important;
+  }
+}
+
+.cds-toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  &__text {
+    margin-left: map-get($size, '02');
+    @include font-size($b--xxs);
+    color: $cds-c-content-02;
+    font-weight: $fw-semibold;
+  }
+}

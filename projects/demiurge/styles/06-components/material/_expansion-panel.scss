@@ -1,0 +1,30 @@
+@import '../../_common.scss';
+.cds-expand-faqs {
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid #e0e2eb;
+  .mat-expansion-panel-header {
+    padding-left: 0;
+    padding-right: map-get($size, '02');
+    height: 72px;
+    &:hover {
+      background-color: transparent !important;
+    }
+    .mat-expansion-panel-header-title {
+      @include font-size($b--l);
+      color: $cds-c-content-01;
+      font-weight: $fw-light;
+    }
+    &.mat-expanded {
+      .mat-expansion-panel-header-title {
+        font-weight: $fw-medium;
+      }
+    }
+  }
+  .mat-expansion-panel-content {
+    .mat-expansion-panel-body {
+      padding: map-get($size, '05') 0 0;
+    }
+  }
+}

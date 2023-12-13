@@ -1,0 +1,277 @@
+@import '../_common.scss';
+
+.cds-table-inner {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    @media (max-width: 491px) {
+      content: '';
+    }
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 48px;
+    z-index: 3;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 77.42%);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $cds-c-background-02;
+    z-index: 100;
+    width: calc(100% - 326px);
+    min-width: 152px;
+    height: 82px;
+    @media (max-width: 491px) {
+      width: calc(100% - 310px);
+    }
+    @include mq('md') {
+      width: calc(100% - 128px * 4);
+      height: 64px;
+    }
+    @include mq('lg') {
+      height: 102px;
+    }
+  }
+}
+
+/* Estilo para la tabla y el contenedor */
+.table-container {
+  position: relative;
+  overflow: auto;
+  max-height: 600px;
+  background-color: $cds-c-background-02;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Estilo para las celdas de encabezado (primera fila) */
+  thead {
+    tr {
+      th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 0;
+        .th-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 8px 16px;
+        }
+        .rewards-column__type {
+          height: 24px;
+        }
+        .rewards-column__text {
+          @include font-size($b--xs);
+          color: $cds-c-content-01;
+          font-weight: $fw-regular;
+          margin-top: 8px;
+        }
+        height: 82px;
+        @include mq('md') {
+          height: 64px;
+        }
+        @include mq('lg') {
+          height: 102px;
+        }
+      }
+      /* Establecer ancho y alto fijo para las columnas 2, 3 y 4 */
+      td:nth-child(n + 2):nth-child(-n + 5),
+      th:nth-child(n + 2):nth-child(-n + 5) {
+        height: 64px;
+        height: 82px;
+        @include mq('md') {
+          height: 64px;
+        }
+        @include mq('lg') {
+          height: 102px;
+        }
+      }
+    }
+  }
+
+  /* Estilo para las celdas de la primera columna */
+  tbody {
+    tr {
+      th:first-child,
+      td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        @include font-size($b--xs);
+        color: $cds-c-content-01;
+        font-weight: $fw-regular;
+        text-align: left;
+        padding: map-get($size, '05') map-get($size, '03') map-get($size, '05') map-get($size, '05');
+        @include mq('lg') {
+          padding: map-get($size, '05') map-get($size, '07');
+        }
+      }
+    }
+  }
+
+  /* Estilo para las celdas del cuerpo */
+  td,
+  th {
+    border-bottom: 1px solid $cds-c-border-03;
+    padding: 8px;
+    text-align: center;
+    height: 64px;
+    @include mq('md') {
+      height: 48px;
+    }
+    @include mq('lg') {
+      height: 56px;
+    }
+  }
+
+  /* Estilos adicionales según sea necesario */
+
+  /* Establecer ancho y alto fijo para las columnas 2, 3 y 4 */
+  td:nth-child(n + 2):nth-child(-n + 5),
+  th:nth-child(n + 2):nth-child(-n + 5) {
+    width: 80px;
+    @include mq('md') {
+      width: 128px;
+    }
+    @include font-size($b--xs);
+    color: $cds-c-content-01;
+    font-weight: $fw-semibold;
+  }
+
+  /* Establecer el ancho automático para la primera columna */
+  td:first-child,
+  th:first-child {
+    width: calc(100% - 80px * 3);
+    min-width: 152px;
+    @include mq('md') {
+      width: calc(100% - 128px * 3);
+    }
+  }
+}
+.table-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.table-container::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+
+.cds-table {
+  /* Estilo para las celdas de encabezado (primera fila) */
+  thead {
+    tr {
+      th {
+        background-color: $cds-c-background-02;
+      }
+      td:nth-child(n + 2):nth-child(-n + 5),
+      th:nth-child(n + 2):nth-child(-n + 5) {
+        background-color: $cds-c-background-03;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /* Estilo para las celdas de la primera columna */
+  tbody {
+    tr {
+      th:first-child,
+      td:first-child {
+        background-color: $cds-c-background-02;
+      }
+      td:nth-child(2) {
+        .cds-icon::before {
+          color: #b5c4ff;
+        }
+      }
+      td:nth-child(3) {
+        .cds-icon::before {
+          color: $color-circle--primqry;
+        }
+      }
+      td:nth-child(4) {
+        .cds-icon::before {
+          color: #fac270;
+        }
+      }
+    }
+  }
+
+  &--great {
+    thead,
+    tbody {
+      tr {
+        th:nth-child(2) {
+          background-color: $cds-c-background-10 !important;
+        }
+        td:nth-child(2) {
+          background-color: $cds-c-background-03;
+          .cds-icon {
+            &::before {
+              color: #b5c4ff;
+            }
+          }
+        }
+      }
+    }
+  }
+  &--circle {
+    thead,
+    tbody {
+      tr {
+        th:nth-child(3) {
+          background-color: $cds-c-background-10 !important;
+        }
+        td:nth-child(3) {
+          background-color: $cds-c-background-03; /* Ancho automático para la primera columna */
+        }
+      }
+    }
+  }
+  &--star {
+    thead,
+    tbody {
+      tr {
+        th:nth-child(4) {
+          background-color: $cds-c-background-10 !important;
+        }
+        td:nth-child(4) {
+          background-color: $cds-c-background-03; /* Ancho automático para la primera columna */
+        }
+      }
+    }
+  }
+  &--top {
+    thead,
+    tbody {
+      tr {
+        th:nth-child(5) {
+          background-color: $cds-c-background-10 !important;
+        }
+        td:nth-child(5) {
+          background-color: $cds-c-background-03; /* Ancho automático para la primera columna */
+        }
+      }
+    }
+  }
+}
