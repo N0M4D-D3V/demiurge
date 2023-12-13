@@ -15,7 +15,7 @@ import { NgClass, NgFor } from '@angular/common';
         <div class="d-flex">
           @for(btn of buttons; track btn.label; let l = $last){
           <button
-            (click)="onClick(btn.handler)"
+            (click)="onClick(btn?.handler)"
             [class]="btn.role ?? ''"
             [ngClass]="{
               'dark-mode': darkMode,
@@ -53,15 +53,12 @@ export class DemiAlertComponent {
 
   public onClose(componentRef: ComponentRef<DemiAlertComponent>) {
     this.alertResolve();
-    console.log(componentRef);
     componentRef.destroy();
   }
 
-  public onClick(handler: () => void) {
-    console.log('funcion bindeada on destroy');
+  public onClick(handler?: () => void) {
     this.ref.onDestroy(() => {
-      console.log('voy a ejecutar la funcion');
-      handler();
+      if (handler) handler();
     });
     this.alertCtrl.close();
   }

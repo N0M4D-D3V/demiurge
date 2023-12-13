@@ -16,7 +16,7 @@ export interface DemiAlertButton {
    * @cancel will put the label with red
    */
   role?: 'continue' | 'cancel';
-  handler: () => void;
+  handler?: () => void;
 }
 
 export interface DemiAlertStorage {

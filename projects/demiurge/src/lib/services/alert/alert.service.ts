@@ -29,7 +29,6 @@ export class DemiAlertService {
       //Creates the main alert component, is placed alongside the clicked item and the styles are set
       const alertComponent =
         this.viewContainerRef.createComponent(DemiAlertComponent);
-      console.log(alertComponent.instance);
 
       // Then the Inputs from the component are filled
       if (options && alertComponent) {
