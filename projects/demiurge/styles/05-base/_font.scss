@@ -1,12 +1,12 @@
-@import '../_common.scss';
+@import "../_common.scss";
 /* demiurge ICONS IMPORT */
 @font-face {
   font-weight: normal;
-  font-family: 'cds-icons';
+  font-family: "cds-icons";
   font-style: normal;
-  src: url('../../assets/cds-icons.eot');
-  src: url('../../assets/cds-icons.eot') format('embedded-opentype'),
-    url('../../assets/cds-icons.woff') format('woff'),
-    url('../../assets/cds-icons.svg') format('svg');
+  src: url("./../../assets/cds-icons.eot");
+  src: url("./../../assets/cds-icons.eot") format("embedded-opentype"),
+    url("./../../assets/cds-icons.woff") format("woff"),
+    url("./../../assets/cds-icons.svg") format("svg");
   font-display: block;
 }
