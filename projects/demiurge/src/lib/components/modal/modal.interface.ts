@@ -27,7 +27,7 @@ export interface DemiModalStorage {
   modalReference: ComponentRef<DemiModalComponent>;
 }
 
-export interface DemiModalInitialization<T> {
+export interface DemiModalInitialization<T = any> {
   component: Type<T>;
   data: any;
   styles: DemiModalStyles;

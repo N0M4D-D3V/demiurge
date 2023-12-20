@@ -26,7 +26,7 @@ export class DemiModalService {
     this.viewContainerRef = appViewRef;
   }
 
-  create(options: DemiModalInitialization<any>): Promise<any> {
+  create(options: DemiModalInitialization): Promise<any> {
     if (this.viewContainerRef) {
       //Creates the main modal component, is placed alongside the clicked item and the styles are set
       const modalContainer =

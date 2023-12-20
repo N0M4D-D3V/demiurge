@@ -8,6 +8,8 @@
   position: absolute;
   top: 0;
 
+  z-index: 9999;
+
   .modal-content {
     border: 2px solid;
     border-radius: 5px;
