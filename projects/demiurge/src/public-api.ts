@@ -12,6 +12,7 @@ export * from './lib/pipes/format/separe.pipe';
 // SERVICES
 export * from './lib/services/alert/alert.service';
 export * from './lib/services/toolbar/toolbar.service';
+export * from './lib/services/local-storage/local-storage.service';
 
 // COMPONENTS
 //          Alert
