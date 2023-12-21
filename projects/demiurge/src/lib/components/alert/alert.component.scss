@@ -9,9 +9,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 1500;
 }
 
 .alert-box {
+  border: 1px solid var(--color-primary);
   background: #ffffffcc;
   backdrop-filter: blur(10px);
   /* Light mode background color */
@@ -28,13 +31,13 @@
 }
 
 button {
-  background-color: transparent;
   margin-top: 20px;
   padding: 10px;
   cursor: pointer;
-  /* Light mode button background color */
-  color: #007aff;
-  /* Light mode button text color */
+
+  color: var(--color-primary);
+  background-color: transparent;
+
   width: 100%;
 
   border: none;
@@ -47,9 +50,7 @@ button {
   }
 
   &.dark-mode {
-    /* Dark mode button background color */
-    color: #007aff;
-    /* Dark mode button text color */
+    color: var(--color-primary);
 
     border-top: 1px solid #8f8f8f73;
 
@@ -67,7 +68,7 @@ button {
   }
 
   &.cancel {
-    color: var(--color-cancel);
+    color: var(--color-primary);
   }
 
   &.continue {
@@ -80,7 +81,7 @@ button {
 }
 
 .button:active {
-  background-color: #0056b3;
+  background-color: var(--color-primary);
 }
 
 /* Dark mode styles */

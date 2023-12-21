@@ -1,7 +1,7 @@
 import { Component, ComponentRef, DestroyRef, Input } from '@angular/core';
 import { DemiAlertService } from '../../services/alert/alert.service';
 import { DemiAlertButton } from './alert.interface';
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'demi-alert',
@@ -22,7 +22,7 @@ import { NgClass, NgFor } from '@angular/common';
               last: l
             }"
           >
-            {{ btn.label }}
+            {{ btn.label | uppercase }}
           </button>
           }
         </div>
@@ -31,7 +31,7 @@ import { NgClass, NgFor } from '@angular/common';
   `,
   styleUrls: ['./alert.component.scss'],
   standalone: true,
-  imports: [NgClass, NgFor],
+  imports: [NgClass, NgFor, UpperCasePipe],
 })
 export class DemiAlertComponent {
   @Input() title: string = '';
