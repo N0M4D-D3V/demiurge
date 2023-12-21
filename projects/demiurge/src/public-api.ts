@@ -1,6 +1,9 @@
 // ABSTRACT
 export * from './lib/abstract/abstract-observable';
 
+// INTERFACES
+export * from './lib/interfaces/user.interface';
+
 // DIRECTIVES
 export * from './lib/directives/scroll-indicator/scroll-indicator.directive';
 

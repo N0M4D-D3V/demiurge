@@ -17,9 +17,14 @@ const ANIMATION_DURATION_MS = 300;
 @Component({
   selector: 'demi-modal',
   template: `
-    <div class="modal-dialog">
-      <div class="modal-content" [@position]="animOrigin ? 'origin' : 'moved'">
-        <ng-content></ng-content>
+    <div class="overlay">
+      <div class="modal-dialog">
+        <div
+          class="modal-content"
+          [@position]="animOrigin ? 'origin' : 'moved'"
+        >
+          <ng-content></ng-content>
+        </div>
       </div>
     </div>
   `,
@@ -94,6 +99,8 @@ export class DemiModalComponent {
     const modalContainer = dialog.querySelector(
       '.modal-content'
     ) as HTMLElement;
+
+    dialog.style.background;
 
     dialog.style.backgroundColor = newStyles?.backdropColor
       ? newStyles.backdropColor

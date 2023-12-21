@@ -35,6 +35,7 @@
 
 @if(currentConfig?.toggleable){
 <demi-toggle-menu
+  [user]="user"
   [config]="config"
   (onLogout)="logout()"
   class="offcanvas offcanvas-start"

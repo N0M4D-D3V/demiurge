@@ -1,7 +1,7 @@
 @defer(on viewport){
 <div
-  class="card my-2  bg-dark text-primary {{ config.cssClass }} {{
-    config.size
+  class="card my-2  bg-dark text-primary {{ config?.cssClass }} {{
+    config?.size
   }} fadein"
   (click)="cardTouched()"
 >

@@ -21,6 +21,7 @@ import {
 } from '@angular/forms';
 import { DemiToggleMenuComponent } from './components/toggle-menu/toggle-menu.component';
 import { DemiToolbarService } from '../../services/toolbar/toolbar.service';
+import { DemiUser } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'demi-toolbar',
@@ -30,6 +31,7 @@ import { DemiToolbarService } from '../../services/toolbar/toolbar.service';
   imports: [FormsModule, ReactiveFormsModule, DemiToggleMenuComponent],
 })
 export class DemiToolbarComponent implements OnInit, OnDestroy {
+  @Input() user?: DemiUser;
   @Input() config!: DemiToolbarConfig;
 
   @Output() onLogout: EventEmitter<void> = new EventEmitter<void>();

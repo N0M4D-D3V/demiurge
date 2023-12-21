@@ -13,6 +13,9 @@
     </button>
   </div>
   <div class="offcanvas-body h-100 px-1">
+    @if(item){
+    <demi-card [item]="item"></demi-card>
+    }
     <div class="d-flex flex-align-start flex-column h-100">
       <div class="list-group overflow-y-auto h-85">
         @for(item of config.items; track item.url;){

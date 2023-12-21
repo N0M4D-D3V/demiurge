@@ -18,3 +18,16 @@
     height: 75%;
   }
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* Set the background color or style as needed */
+  z-index: 1020; /* Ensure the overlay is on top of other elements */
+  pointer-events: auto; /* Enable pointer events on the overlay */
+
+  overflow: hidden;
+}
