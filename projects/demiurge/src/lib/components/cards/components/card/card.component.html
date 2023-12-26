@@ -8,6 +8,9 @@
   <div class="card-body">
     <h3 class="card-title">{{ item.title }}</h3>
     <p class="card-text">{{ item.subtitle }}</p>
+    @if(item.imgUrl && config.displayImg){
+    <img id="profileImg" src="{{ item.imgUrl }}" alt="profile img" />
+    }
   </div>
 </div>
 } @placeholder {

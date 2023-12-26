@@ -13,7 +13,11 @@ import {
 } from '@angular/common';
 import { DemiUser } from 'projects/demiurge/src/lib/interfaces/user.interface';
 import { DemiCardComponent } from '../../../cards/components/card/card.component';
-import { DemiCardItem } from '../../../cards/interfaces/card.interface';
+import {
+  DemiCardConfig,
+  DemiCardItem,
+  DemiCardSize,
+} from '../../../cards/interfaces/card.interface';
 
 @Component({
   selector: 'demi-toggle-menu',
@@ -36,14 +40,21 @@ export class DemiToggleMenuComponent implements OnInit {
   @Output() onLogout: EventEmitter<void> = new EventEmitter<void>();
 
   public item?: DemiCardItem;
+  public profileCardConfig: DemiCardConfig = {
+    displayImg: true,
+    size: DemiCardSize.Res,
+  };
   public currentPath: string = this.config?.defaultPath || '';
 
   constructor(private readonly router: Router) {}
 
   ngOnInit(): void {
-    console.log('hello there');
     if (this.user) {
-      this.item = { title: this.user.displayName, subtitle: this.user.email };
+      this.item = {
+        title: this.user.displayName,
+        subtitle: this.user.email,
+        imgUrl: this.user.photoURL,
+      };
     }
   }
 

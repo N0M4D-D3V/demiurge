@@ -14,7 +14,9 @@
   </div>
   <div class="offcanvas-body h-100 px-1">
     @if(item){
-    <demi-card [item]="item"></demi-card>
+    <div class="w-100 px-2">
+      <demi-card [item]="item" [config]="profileCardConfig"></demi-card>
+    </div>
     }
     <div class="d-flex flex-align-start flex-column h-100">
       <div class="list-group overflow-y-auto h-85">

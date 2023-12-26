@@ -1,6 +1,7 @@
 export interface DemiCardConfig {
   isClickable?: boolean;
   canSearch?: boolean;
+  displayImg?: boolean;
 
   cssClass?: string;
 
@@ -19,4 +20,5 @@ export enum DemiCardSize {
   M = 'medium',
   L = 'large',
   XL = 'x-large',
+  Res = 'responsive',
 }
