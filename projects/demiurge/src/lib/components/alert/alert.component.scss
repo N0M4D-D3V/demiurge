@@ -68,11 +68,12 @@ button {
   }
 
   &.cancel {
-    color: var(--color-primary);
+    color: var(--color-cancel);
   }
 
   &.continue {
     font-weight: bold;
+    color: var(--color-accent);
   }
 }
 

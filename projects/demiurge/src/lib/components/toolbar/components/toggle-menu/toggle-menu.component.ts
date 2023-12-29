@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewContainerRef,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import {
   DemiToolbarMenuItemConfig,
@@ -18,6 +25,7 @@ import {
   DemiCardItem,
   DemiCardSize,
 } from '../../../cards/interfaces/card.interface';
+import { DemiAlertService } from '../../../../services/alert/alert.service';
 
 @Component({
   selector: 'demi-toggle-menu',
@@ -47,9 +55,15 @@ export class DemiToggleMenuComponent implements OnInit {
   };
   public currentPath: string = this.config?.defaultPath || '';
 
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly ref: ViewContainerRef,
+    private readonly router: Router,
+    private readonly alert: DemiAlertService
+  ) {}
 
   ngOnInit(): void {
+    this.alert.initAlertService(this.ref);
+
     if (this.user) {
       this.item = {
         title: this.user.displayName,
@@ -65,6 +79,20 @@ export class DemiToggleMenuComponent implements OnInit {
   }
 
   public logout(): void {
-    this.onLogout.emit();
+    this.alert.create({
+      title: 'Alert',
+      message: 'Are you sure you want to logout?',
+      buttons: [
+        {
+          label: 'YES',
+          role: 'cancel',
+          handler: () => this.onLogout.emit(),
+        },
+        {
+          label: 'NO',
+          role: 'continue',
+        },
+      ],
+    });
   }
 }
