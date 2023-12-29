@@ -53,7 +53,6 @@ export class DemiToggleMenuComponent implements OnInit {
     size: DemiCardSize.Res,
     cssClass: 'bg-transparent border-primary',
   };
-  public currentPath: string = this.config?.defaultPath || '';
 
   constructor(
     private readonly ref: ViewContainerRef,
@@ -74,7 +73,6 @@ export class DemiToggleMenuComponent implements OnInit {
   }
 
   public navigate(item: DemiToolbarMenuItemConfig): void {
-    this.currentPath = item.url;
     this.router.navigate([item.url]);
   }
 

@@ -1,8 +1,4 @@
 .btn-play {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-
   margin: 1%;
 
   border: solid 2px var(--color-primary);
@@ -13,4 +9,16 @@
 
 .card-title {
   color: var(--color-primary);
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0px;
+
+  width: 95%;
+  height: 20%;
+
+  padding: 0;
+
+  border: none;
 }

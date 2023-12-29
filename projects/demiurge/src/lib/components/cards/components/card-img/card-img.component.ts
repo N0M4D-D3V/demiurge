@@ -10,9 +10,13 @@ import { DemiCardConfig, DemiCardItem } from '../../interfaces/card.interface';
       <div class="card-img-overlay">
         <h5 class="card-title">{{ item.title }}</h5>
         <p class="card-text">{{ item.subtitle }}</p>
-        <a (click)="readTouched()" class="btn btn-play"
-          ><i class="bi bi-eyeglasses"></i
-        ></a>
+
+        <div class="card-footer d-flex align-items-center">
+          <span>{{ item.bottomText }}</span>
+          <a (click)="readTouched()" class="btn btn-play ms-auto"
+            ><i class="bi bi-eyeglasses"></i
+          ></a>
+        </div>
       </div>
     </div>
     } @placeholder {

@@ -47,6 +47,13 @@ fieldset:disabled .btn {
   height: 67% !important;
 }
 
+.vertical-center {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
 @import "./animations.scss";
 @import "./keyframes.scss";
 @import "./input.scss";

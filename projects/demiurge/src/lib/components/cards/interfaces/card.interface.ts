@@ -12,6 +12,13 @@ export interface DemiCardItem {
   title: string;
 
   subtitle?: string;
+
+  /**
+   * This text will appears at the bottom if demi-card-img.
+   * In others cards it won't appears.
+   */
+  bottomText?: string;
+
   imgUrl?: string;
 }
 
