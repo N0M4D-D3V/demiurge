@@ -43,6 +43,7 @@ export class DemiToggleMenuComponent implements OnInit {
   public profileCardConfig: DemiCardConfig = {
     displayImg: true,
     size: DemiCardSize.Res,
+    cssClass: 'bg-transparent border-primary',
   };
   public currentPath: string = this.config?.defaultPath || '';
 
