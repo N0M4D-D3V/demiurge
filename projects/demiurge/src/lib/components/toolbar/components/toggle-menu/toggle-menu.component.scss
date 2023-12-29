@@ -7,3 +7,7 @@
 .list-group-item.active {
   color: var(--color-accent) !important;
 }
+
+.offcanvas-body {
+  overflow: hidden;
+}
