@@ -13,9 +13,11 @@ import { DemiCardConfig, DemiCardItem } from '../../interfaces/card.interface';
 
         <div class="card-footer d-flex align-items-center">
           <span>{{ item.bottomText }}</span>
+          @if(config?.icon){
           <a (click)="readTouched()" class="btn btn-play ms-auto"
-            ><i class="bi bi-eyeglasses"></i
+            ><i class="bi {{ config?.icon }}"></i
           ></a>
+          }
         </div>
       </div>
     </div>
@@ -25,7 +27,7 @@ import { DemiCardConfig, DemiCardItem } from '../../interfaces/card.interface';
       <div class="card-img-overlay">
         <h5 class="card-title"></h5>
         <p class="card-text"></p>
-        <a class="btn btn-play"><i class="bi bi-eyeglasses"></i></a>
+        <a class="btn btn-play"><i class="bi {{ config?.icon }}"></i></a>
       </div>
     </div>
     } }

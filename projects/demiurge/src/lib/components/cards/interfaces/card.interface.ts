@@ -6,6 +6,7 @@ export interface DemiCardConfig {
   cssClass?: string;
 
   size?: DemiCardSize;
+  icon?: BsIcon;
 }
 
 export interface DemiCardItem {
@@ -28,4 +29,9 @@ export enum DemiCardSize {
   L = 'large',
   XL = 'x-large',
   Res = 'responsive',
+}
+
+export enum BsIcon {
+  Download = 'bi-download',
+  Glasses = 'bi-eyeglasses',
 }
