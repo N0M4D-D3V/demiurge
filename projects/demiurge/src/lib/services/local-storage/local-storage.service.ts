@@ -8,11 +8,13 @@ export class DemiLocalStorageService {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  public get<T>(key: string): T {
+  public get<T>(key: string): T | undefined {
     const plainItem: string | null = localStorage.getItem(key);
 
     if (plainItem) return JSON.parse(plainItem) as T;
-    else throw new Error(`Item with key '${key}' has no value`);
+
+    console.log(`Item with key '${key}' has no value`);
+    return;
   }
 
   public delete(key: string): void {
