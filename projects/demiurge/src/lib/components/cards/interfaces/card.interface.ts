@@ -10,7 +10,7 @@ export interface DemiCardConfig {
 }
 
 export interface DemiCardItem {
-  title: string;
+  title?: string;
 
   subtitle?: string;
 

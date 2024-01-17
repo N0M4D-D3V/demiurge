@@ -12,8 +12,6 @@ export class DemiLocalStorageService {
     const plainItem: string | null = localStorage.getItem(key);
 
     if (plainItem) return JSON.parse(plainItem) as T;
-
-    console.log(`Item with key '${key}' has no value`);
     return;
   }
 

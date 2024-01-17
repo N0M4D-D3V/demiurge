@@ -18,6 +18,7 @@ export interface DemiToolbarConfig {
   items: DemiToolbarMenuItemConfig[];
 
   defaultProfileImgPath?: string;
+  defaultTitle?: string;
 }
 
 export type DemiToolbarButtonType = 'back' | 'toggle' | 'search';

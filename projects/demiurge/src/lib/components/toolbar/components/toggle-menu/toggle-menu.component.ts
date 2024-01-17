@@ -65,7 +65,7 @@ export class DemiToggleMenuComponent implements OnInit {
 
     if (this.user) {
       this.item = {
-        title: this.user.displayName,
+        title: this.user.displayName ?? this.config.defaultTitle,
         subtitle: this.user.email,
         imgUrl: this.user.photoURL ?? this.config.defaultProfileImgPath,
       };
