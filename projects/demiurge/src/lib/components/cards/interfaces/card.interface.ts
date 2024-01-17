@@ -34,4 +34,5 @@ export enum DemiCardSize {
 export enum BsIcon {
   Download = 'bi-download',
   Glasses = 'bi-eyeglasses',
+  Play = 'bi-play-fill',
 }
