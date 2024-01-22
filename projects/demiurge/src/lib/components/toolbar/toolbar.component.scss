@@ -13,5 +13,7 @@ input {
 }
 
 .offcanvas {
+  --bs-offcanvas-width: 100vw;
+
   background-color: rgba(0, 0, 0, 0.8) !important;
 }
