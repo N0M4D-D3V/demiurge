@@ -17,6 +17,8 @@ export interface DemiToolbarConfig {
   defaultPath?: string;
   items: DemiToolbarMenuItemConfig[];
 
+  canLogout?: boolean;
+
   defaultProfileImgPath?: string;
   defaultTitle?: string;
 }

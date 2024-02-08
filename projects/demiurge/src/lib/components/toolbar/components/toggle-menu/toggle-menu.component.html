@@ -36,11 +36,13 @@
         </a>
         }
       </div>
+      @if (config.canLogout) {
       <div class="d-flex justify-content-end">
         <button type="button" class="btn text-danger btn-lg" (click)="logout()">
           <b><i class="bi bi-power"></i></b>
         </button>
       </div>
+      }
     </div>
   </div>
 </div>
